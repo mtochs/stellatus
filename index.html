@@ -98,40 +98,45 @@
             </div>
         </section>
 
-        <!-- 6 ▪ Who We Serve -->
-        <section class="who-we-serve">
+        <!-- Consolidated Info Section (Who We Serve, Reliability, Pilot Offer) -->
+        <section class="consolidated-info features"> <!-- Reusing .features for grid styling -->
             <div class="container">
-                <h2>Who We Serve</h2>
-                <p>Commercial constellations (5–300 sats), university tech demos, emerging IoT & EO fleets that need enterprise-grade STM without enterprise-grade head-count.</p>
+                <!-- No main H2 for this section, titles are per card -->
+                <div class="feature-grid">
+                    <!-- Who We Serve Card -->
+                    <div class="feature-item">
+                        <h3>Who We Serve</h3>
+                        <p>Commercial constellations (5–300 sats), university tech demos, emerging IoT & EO fleets that need enterprise-grade STM without enterprise-grade head-count.</p>
+                    </div>
+
+                    <!-- Reliability & Audit Card -->
+                    <div class="feature-item">
+                        <h3>Reliability & Audit</h3>
+                        <p>SHA-256 hash-chain ledger locks every maneuver decision; Monte-Carlo validation runs 1 000 trials per burn.</p>
+                        <p>Built for OSC TraCSS today, EU Space-Act tomorrow.</p>
+                    </div>
+
+                    <!-- Pilot Offer Card -->
+                    <div class="feature-item">
+                        <h3>Pilot Offer</h3>
+                        <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
+                           $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 7 ▪ Reliability & Audit (Was Trust section) -->
-        <section class="trust">
-            <div class="container">
-                <h2>Reliability & Audit</h2>
-                <p>SHA-256 hash-chain ledger locks every maneuver decision; Monte-Carlo validation runs 1 000 trials per burn.</p>
-                <p>Built for OSC TraCSS today, EU Space-Act tomorrow.</p>
-                <!-- Removed old trust-grid -->
-            </div>
-        </section>
-
-        <!-- 8 ▪ Pilot Offer (New Section) -->
-        <section class="pilot-offer solution"> <!-- Reusing .solution for basic text section style -->
-            <div class="container">
-                <h2>Pilot Offer</h2>
-                <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
-                   $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
-                <!-- Consider using a list <ul> if more structure is desired -->
-            </div>
-        </section>
-
-        <!-- 9 ▪ Final CTA -->
-        <section class="cta-final" id="demo">
-            <div class="container">
-                <h2>Ready to collapse hours into minutes?</h2>
-                <p>Book a 15-minute demo and watch your next alert become an executable burn—papers included.</p>
-                <a href="#contact-form" class="cta-button primary">Book a 15-minute demo</a> <!-- Updated CTA text -->
+        <!-- Biography Section -->
+        <section class="biography">
+            <div class="container bio-container">
+                <div class="bio-text">
+                    <h2>Stellatus Founder</h2>
+                    <p>Hi—I'm Mike Ochs, a long‑time enterprise‑tech operator (most recently at Microsoft, closing mission‑critical cloud deals with Cisco and AMD) who has traded quotas for orbits. I've spent the past year shoulder‑deep in space‑situational‑awareness code—using the same performance discipline that kept Fortune 100 CIOs happy—to shrink collision‑avoidance from a two‑hour spreadsheet exercise to an eight‑minute click.</p>
+                    <p>I work with a small bench of orbital‑dynamics PhDs and former flight‑directors (because space is unforgiving) and bring the enterprise‑grade support mindset you expect when real satellites—and revenue—are on the line. If the promise of "alert‑to‑burn in ten minutes" resonates, please reach out. I'm building Stellatus for ops leaders who measure success in ΔV, up‑time and sleep regained.</p>
+                </div>
+                <div class="bio-image">
+                    <img src="me.jpg" alt="Mike Ochs - Stellatus Founder">
+                </div>
             </div>
         </section>
 
