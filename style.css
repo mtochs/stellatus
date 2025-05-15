@@ -668,23 +668,27 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 350px; /* Ensure it has some height even if bg fails or is smaller */
 }
 
 .visual-placeholder {
     width: 100%;
-    max-width: 450px; 
-    height: 350px; 
-    background-color: rgba(40, 40, 80, 0.5); /* Placeholder color */
-    border: 2px dashed #5566ff;
+    max-width: 480px; /* Increased max-width slightly */ 
+    height: 100%; 
+    min-height: 380px; /* Ensure a good minimum height */
+    background-image: url('hero-visual.png');
+    background-size: contain; /* Scale image to fit within bounds, maintain aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Remove old placeholder styles */
+    /* background-color: rgba(40, 40, 80, 0.5); */
+    /* border: 2px dashed #5566ff; */
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #88aaff;
-    font-size: 1.2rem;
+    /* color: #88aaff; */
+    /* font-size: 1.2rem; */
 }
 .visual-placeholder::after {
-    content: "Engaging Visual Here";
+    content: ""; /* Remove text content */
 }
 
 /* Responsive adjustments for Nav and new Hero */
@@ -694,9 +698,12 @@ a:hover {
     }
     .hero-visual-right {
         max-width: 400px;
+        min-height: 300px;
     }
     .visual-placeholder {
-        height: 300px;
+        /* height: 300px; No longer fixed height, will adapt */
+        min-height: 300px;
+        max-width: 400px;
     }
 }
 
@@ -758,10 +765,14 @@ a:hover {
 
     .hero-visual-right {
         width: 100%;
-        max-width: 350px; /* Adjust placeholder size for mobile */
+        max-width: 380px; /* Adjust placeholder size for mobile */
+        min-height: 280px;
+        margin-top: 20px; /* Add some space when stacked */
     }
     .visual-placeholder {
-        height: 280px;
+        /* height: 280px; No longer fixed height */
+        min-height: 280px;
+        max-width: 380px;
     }
 }
 
