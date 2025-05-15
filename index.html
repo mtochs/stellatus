@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellatus • Rapid Conjunction Resolver</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Removed inline style block for trust-grid -->
+</head>
+<body>
+    <!-- Star‑field canvas -->
+    <canvas id="starfield"></canvas>
+
+    <div class="main-content">
+        <!-- 1 ▪ Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Solve Conjunctions in &lt; 10 Minutes</h1>
+                <p>Stellatus turns every close-approach alert into an optimized burn-file and regulator-ready report—no extra dashboards, no late-night triage.</p>
+                <a href="#contact-form" class="cta-button primary">Request a Demo</a>
+                <a href="#solution-overview" class="cta-link secondary">See the 10-Minute Loop</a> <!-- Updated link target -->
+            </div>
+        </section>
+
+        <!-- 2 ▪ Alert Avalanche (Challenge) -->
+        <section class="challenge" id="why">
+            <div class="container">
+                <h2>Alert Avalanche</h2>
+                <p>Low-Earth orbit is on track to double active satellites by 2027. Today a 10-sat constellation sees 30 red-flag alerts per spacecraft each year—each one a two-hour grind through spreadsheets, GMAT scripts and TraCSS forms. The next ASAT breakup could multiply that workload overnight.</p>
+                <!-- Removed old challenge-list ul -->
+            </div>
+        </section>
+
+        <!-- 3 ▪ Solution Overview -->
+        <section class="solution" id="solution-overview"> <!-- Added ID for secondary CTA link -->
+            <div class="container">
+                <h2>Solution Overview</h2>
+                <h3>Rapid Conjunction Resolver: Alert → Burn → Compliance in 10 Minutes</h3>
+                <p>Sub-minute sensor fusion shrinks covariance, AI ranks alerts by Cost-of-Inaction, a Lambert solver delivers the lowest-ΔV burn, and the system auto-uploads the command plus a hash-chained TraCSS/EU-STM record.</p>
+                <!-- Removed old solution ul -->
+            </div>
+        </section>
+
+        <!-- 4 ▪ Features & Benefits -->
+        <section class="features">
+            <div class="container">
+                <h2>Features & Benefits</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>Sub-Minute Orbit Data</h3>
+                        <p>Stay 400x fresher than public TLEs—actionable, not stale.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Dollars-First Risk Score</h3>
+                        <p>Pc × mission value shows what's truly urgent.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>One-Click Burn Generator</h3>
+                        <p>KubOS JSON, GMAT script, CCSDS packet ready for uplink.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Auto Compliance</h3>
+                        <p>TraCSS & EU-STM PDF in your inbox before the coffee cools.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>API-First, UI-Lite</h3>
+                        <p>Integrates with KSAT, AWS, Leaf; no new consoles required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 ▪ Quantified Impact (New Section) -->
+        <section class="quantified-impact features"> <!-- Reusing .features for styling context if needed -->
+            <div class="container">
+                <h2>Quantified Impact</h2>
+                <div class="feature-grid"> <!-- Reusing grid layout -->
+                    <div class="feature-item">
+                        <h3>95 % Analyst Time Cut</h3>
+                        <p>120 min → 8 min per alert</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>17 % Average ΔV Saved</h3>
+                        <p>Lambert optimizer + tighter covariance</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>> 3x ROI for a 10-Sat Fleet</h3>
+                        <p>$144 k/y benefit vs $36 k fee</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Surge Proof</h3>
+                        <p>Alert volume can 5× with zero extra head-count</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consolidated Info Section (Who We Serve, Reliability, Pilot Offer) -->
+        <section class="consolidated-info features"> <!-- Reusing .features for grid styling -->
+            <div class="container">
+                <!-- No main H2 for this section, titles are per card -->
+                <div class="feature-grid">
+                    <!-- Who We Serve Card -->
+                    <div class="feature-item">
+                        <h2>Who We Serve</h2>
+                        <p>Commercial constellations (5–300 sats), university tech demos, emerging IoT & EO fleets that need enterprise-grade STM without enterprise-grade head-count.</p>
+                    </div>
+
+                    <!-- Reliability & Audit Card -->
+                    <div class="feature-item">
+                        <h2>Reliability & Audit</h2>
+                        <p>SHA-256 hash-chain ledger locks every maneuver decision; Monte-Carlo validation runs 1 000 trials per burn.</p>
+                        <p>Built for OSC TraCSS today, EU Space-Act tomorrow.</p>
+                    </div>
+
+                    <!-- Pilot Offer Card -->
+                    <div class="feature-item">
+                        <h2>Pilot Offer</h2>
+                        <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
+                           $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography Section -->
+        <section class="biography">
+            <div class="container bio-container">
+                <div class="bio-text">
+                    <h2>Stellatus Founder</h2>
+                    <p>Hi—I'm Mike Ochs, a long‑time enterprise‑tech operator (most recently at Microsoft, closing mission‑critical cloud deals with Cisco and AMD) who has traded quotas for orbits. I've spent the past year shoulder‑deep in space‑situational‑awareness code—using the same performance discipline that kept Fortune 100 CIOs happy—to shrink collision‑avoidance from a two‑hour spreadsheet exercise to an eight‑minute click.</p>
+                    <p>I work with a small bench of orbital‑dynamics PhDs and former flight‑directors (because space is unforgiving) and bring the enterprise‑grade support mindset you expect when real satellites—and revenue—are on the line. If the promise of "alert‑to‑burn in ten minutes" resonates, please reach out. I'm building Stellatus for ops leaders who measure success in ΔV, up‑time and sleep regained.</p>
+                </div>
+                <div class="bio-image">
+                    <img src="me.jpg" alt="Mike Ochs - Stellatus Founder">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-section" id="contact-form">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Send us a message and we'll get back to you.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional):</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button primary">Send Message</button>
+                    <p id="form-status" class="form-status-message"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <nav>
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms of Service</a>
+                </nav>
+                <p>&copy; 2025 Stellatus LLC. All rights reserved.</p> <!-- Removed extra spaces -->
+                <p><a href="https://stellat.us">stellat.us</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
