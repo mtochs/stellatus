@@ -99,4 +99,23 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         // Optionally display the mailto link for manual copying
         // statusElement.innerHTML += `<br><a href="${mailtoLink}">Click here to try manually</a>`;
     }
-}); 
+});
+
+// --- Mobile Navigation Toggle ---
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileNavToggle && navLinks) {
+    mobileNavToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Optional: Close mobile nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+} 

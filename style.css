@@ -12,6 +12,7 @@ body, html {
     color: #e0e0ff; /* Light text color */
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scrollbars */
+    padding-top: 70px; /* Offset for fixed navbar */
 }
 
 /* Canvas Starfield */
@@ -549,4 +550,547 @@ a:hover {
         padding: 12px 20px;
     }
 }
+
+/* Navigation Bar */
+.main-nav {
+    background-color: rgba(10, 10, 30, 0.85); /* Dark, semi-transparent */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2a2a5c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 70px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-top: 0; /* Override general container padding */
+    padding-bottom: 0; /* Override general container padding */
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #c0c0ee;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+}
+
+.nav-cta {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Restructured Hero Section */
+.hero-restructured {
+    padding: 60px 0; /* Adjust padding as needed */
+    background-color: transparent; /* Already set for sections, but ensure */
+}
+
+.hero-container-split {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content-left {
+    flex: 1.2; /* Give slightly more space to text content */
+    text-align: left;
+}
+
+.hero-content-left h1 {
+    font-size: 3.8rem; /* Even larger */
+    text-align: left;
+    text-shadow: 0 0 15px rgba(170, 190, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.hero-content-left .subtitle {
+    font-size: 1.2rem;
+    color: #c0c0ee;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-ctas {
+    margin-bottom: 2rem;
+}
+
+.hero-ctas .cta-button.primary {
+    margin-right: 20px;
+}
+
+.hero-social-proof {
+    font-size: 0.9rem;
+    color: #a0a0cc;
+}
+.hero-social-proof strong {
+    color: #c0c0ee;
+}
+
+.hero-visual-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-placeholder {
+    width: 100%;
+    max-width: 450px; 
+    height: 350px; 
+    background-color: rgba(40, 40, 80, 0.5); /* Placeholder color */
+    border: 2px dashed #5566ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #88aaff;
+    font-size: 1.2rem;
+}
+.visual-placeholder::after {
+    content: "Engaging Visual Here";
+}
+
+/* Responsive adjustments for Nav and new Hero */
+@media (max-width: 1024px) {
+    .hero-content-left h1 {
+        font-size: 3.2rem;
+    }
+    .hero-visual-right {
+        max-width: 400px;
+    }
+    .visual-placeholder {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Adjust for slightly smaller fixed nav */
+    }
+    .main-nav {
+        height: 60px;
+    }
+    .nav-container {
+        position: relative; /* For mobile menu positioning */
+    }
+    .nav-links {
+        display: none; /* Hide links for mobile toggle */
+        position: absolute;
+        top: 60px; /* Position below navbar */
+        left: 0;
+        right: 0;
+        background-color: rgba(10, 10, 30, 0.95); 
+        flex-direction: column;
+        padding: 20px 0;
+        border-top: 1px solid #2a2a5c;
+    }
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+    .nav-links li {
+        margin: 10px 20px;
+        text-align: center;
+    }
+    .nav-cta {
+        display: none; /* Hide nav CTA, hero CTA is prominent */
+    }
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .hero-container-split {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content-left {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .hero-content-left h1, .hero-content-left .subtitle {
+        text-align: center;
+        max-width: 100%;
+    }
+    .hero-ctas {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap */
+    }
+    .hero-ctas .cta-button.primary {
+        margin-bottom: 15px; /* Space when buttons stack */
+    }
+
+    .hero-visual-right {
+        width: 100%;
+        max-width: 350px; /* Adjust placeholder size for mobile */
+    }
+    .visual-placeholder {
+        height: 280px;
+    }
+}
+
+/* Existing responsive styles will be reviewed and merged later */
+
+/* New Features Section Styling */
+.features-new {
+    padding: 60px 0;
+    background-color: #08081B; /* Slightly different dark shade */
+}
+
+.features-new .section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    border-bottom: 2px solid #5566ff;
+    padding-bottom: 10px;
+    display: inline-block; /* Center the border correctly */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.highlighted-feature {
+    display: flex;
+    align-items: center; /* Vertically center icon and content */
+    gap: 30px;
+    background-color: rgba(20, 20, 50, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: 1px solid #2a2a5c;
+}
+
+.highlighted-feature-icon {
+    flex-basis: 80px; /* Fixed size for icon container */
+    text-align: center;
+}
+
+.icon-placeholder-large {
+    font-size: 3.5rem; /* Large icon */
+    color: #7788ff;
+    /* Replace with actual icon/SVG later */
+}
+
+.highlighted-feature-content h3 {
+    font-size: 2rem;
+    color: #aabbff;
+    margin-bottom: 10px;
+}
+
+.highlighted-feature-content p {
+    font-size: 1.1rem;
+    color: #c0c0ee;
+    line-height: 1.7;
+}
+
+.secondary-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #15152f; 
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left; /* Align text left within cards */
+    border: 1px solid #25254D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(85, 102, 255, 0.15);
+}
+
+.icon-placeholder-small {
+    font-size: 2rem; /* Smaller icon */
+    color: #88aaff;
+    display: block;
+    margin-bottom: 15px;
+    /* Replace with actual icons/SVGs later */
+}
+
+.feature-card h4 {
+    font-size: 1.4rem;
+    color: #99aaff;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #b0b0dd;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for New Features Section */
+@media (max-width: 1024px) {
+    .features-new .section-title {
+        font-size: 2.3rem;
+    }
+    .highlighted-feature-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-new .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .highlighted-feature {
+        flex-direction: column; /* Stack icon and content */
+        text-align: center; /* Center text when stacked */
+        padding: 25px;
+    }
+    .highlighted-feature-icon {
+        margin-bottom: 15px;
+    }
+    .highlighted-feature-content h3 {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    .highlighted-feature-content p {
+        font-size: 1rem;
+    }
+    .secondary-features-grid {
+        grid-template-columns: 1fr; /* Stack cards */
+    }
+    .feature-card {
+        text-align: center;
+    }
+    .icon-placeholder-small {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* How It Works Section Styling */
+.how-it-works {
+    padding: 60px 0;
+    /* background-color: #0A0A1E; */ /* Can use a slightly different shade or keep consistent */
+}
+
+.how-it-works .section-title {
+    /* Uses existing .section-title style from features-new */
+    margin-bottom: 50px;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 40px;
+    align-items: flex-start; /* Align items to the top of their cell */
+}
+
+.problem-column, .solution-column {
+    background-color: rgba(20, 20, 50, 0.5); /* Subtle background for each column */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #2a2a5c;
+    text-align: center; /* Center content within columns */
+}
+
+.problem-column h3, .solution-column h3 {
+    font-size: 1.8rem;
+    color: #aabbff;
+    margin-bottom: 20px;
+}
+
+.icon-placeholder-medium {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.problem-icon .icon-placeholder-medium {
+    color: #ff8080; /* Reddish for problem */
+}
+
+.solution-icon .icon-placeholder-medium {
+    color: #80ff80; /* Greenish for solution */
+}
+
+.problem-column p, .solution-column p {
+    font-size: 1.05rem;
+    color: #c0c0ee;
+    line-height: 1.7;
+}
+
+/* Testimonials Section Styling */
+.testimonials {
+    padding: 60px 0;
+    background-color: #08081B; /* Consistent with features section */
+}
+
+.testimonials .section-title {
+    /* Uses existing .section-title style */
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #1A1A3A; /* Slightly different from feature-card */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center; /* Center content in cards */
+    border: 1px solid #2f2f5f;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial-icon {
+    margin-bottom: 15px;
+}
+
+/* .testimonial-icon .icon-placeholder-medium is already styled */
+
+.testimonial-card h3 {
+    font-size: 1.7rem;
+    color: #c5c5f5; /* Slightly softer than feature titles */
+    margin-bottom: 10px;
+}
+
+.testimonial-detail {
+    font-size: 1rem;
+    color: #b0b0dd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.testimonial-source {
+    font-size: 0.9rem;
+    color: #88aaff;
+    font-style: italic;
+}
+
+/* FAQ Section Styling */
+.faq {
+    padding: 60px 0;
+}
+
+.faq .section-title {
+    /* Uses existing .section-title style */
+    margin-bottom: 50px;
+}
+
+.faq-list {
+    max-width: 800px; /* Constrain width of FAQ list */
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: rgba(20, 20, 50, 0.5);
+    border: 1px solid #2a2a5c;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item[open] {
+    background-color: rgba(25, 25, 60, 0.7);
+}
+
+.faq-question {
+    padding: 20px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #c5c5f5;
+    cursor: pointer;
+    position: relative; /* For custom marker */
+    list-style: none; /* Remove default marker */
+    transition: color 0.3s ease;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none; /* Hide default marker in WebKit */
+}
+
+.faq-question::after { /* Custom marker */
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: #88aaff;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg); /* Rotate minus sign for open state - not needed if content is just minus */
+}
+
+.faq-item[open] .faq-question {
+    color: #ffffff;
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: #b0b0dd;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+/* Responsive adjustments for FAQ Section */
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: 1.1rem;
+        padding-right: 40px; /* Ensure space for marker */
+    }
+    .faq-question::after {
+        font-size: 1.5rem;
+    }
+    .faq-answer {
+        font-size: 0.95rem;
+    }
+}
+
+/* ... (Existing responsive styles) ... */
 

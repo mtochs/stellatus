@@ -8,126 +8,190 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Removed inline style block for trust-grid -->
 </head>
 <body>
-    <!-- Star‑field canvas -->
     <canvas id="starfield"></canvas>
 
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">Stellatus</a>
+            <ul class="nav-links">
+                <li><a href="#features-section">Features</a></li>
+                <li><a href="#how-it-works-section">How It Works</a></li>
+                <li><a href="#testimonials-section">Results</a></li>
+                <li><a href="#pilot-offer-section">Pilot Offer</a></li> 
+                <li><a href="#faq-section">FAQ</a></li>
+                <li><a href="#founder-bio-section">About</a></li>
+            </ul>
+            <a href="#contact-form" class="cta-button primary nav-cta">Request a Demo</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
     <div class="main-content">
-        <!-- 1 ▪ Hero -->
-        <section class="hero">
-            <div class="container">
-                <h1>Solve Conjunctions in &lt; 10 Minutes</h1>
-                <p>Stellatus turns every close-approach alert into an optimized burn-file and regulator-ready report—no extra dashboards, no late-night triage.</p>
-                <a href="#contact-form" class="cta-button primary">Request a Demo</a>
-                <a href="#solution-overview" class="cta-link secondary">See the 10-Minute Loop</a> <!-- Updated link target -->
+        <!-- Hero Section -->
+        <section class="hero hero-restructured">
+            <div class="container hero-container-split">
+                <div class="hero-content-left">
+                    <h1>Conjunctions Solved in &lt; 10 Minutes</h1>
+                    <p class="subtitle">Stellatus turns every close-approach alert into an optimized burn-file and regulator-ready report—no extra dashboards, no late-night triage.</p>
+                    <div class="hero-ctas">
+                        <a href="#contact-form" class="cta-button primary">Request a Demo</a>
+                        <a href="#how-it-works-section" class="cta-link secondary">See the 10-Minute Loop</a>
+                    </div>
+                    <div class="hero-social-proof">
+                        <p><strong>Impact:</strong> 95% Analyst Time Cut, 17% Average ΔV Saved.</p> 
+                    </div>
+                </div>
+                <div class="hero-visual-right">
+                    <div class="visual-placeholder"></div> 
+                </div>
             </div>
         </section>
 
-        <!-- 2 ▪ Alert Avalanche (Challenge) -->
-        <section class="challenge" id="why">
+        <!-- Features Section -->
+        <section id="features-section" class="features-new">
             <div class="container">
-                <h2>Alert Avalanche</h2>
-                <p>Low-Earth orbit is on track to double active satellites by 2027. Today a 10-sat constellation sees 30 red-flag alerts per spacecraft each year—each one a two-hour grind through spreadsheets, GMAT scripts and TraCSS forms. The next ASAT breakup could multiply that workload overnight.</p>
-                <!-- Removed old challenge-list ul -->
-            </div>
-        </section>
-
-        <!-- 3 ▪ Solution Overview -->
-        <section class="solution" id="solution-overview"> <!-- Added ID for secondary CTA link -->
-            <div class="container">
-                <h2>Solution Overview</h2>
-                <h3>Rapid Conjunction Resolver: Alert → Burn → Compliance in 10 Minutes</h3>
-                <p>Sub-minute sensor fusion shrinks covariance, AI ranks alerts by Cost-of-Inaction, a Lambert solver delivers the lowest-ΔV burn, and the system auto-uploads the command plus a hash-chained TraCSS/EU-STM record.</p>
-                <!-- Removed old solution ul -->
-            </div>
-        </section>
-
-        <!-- 4 ▪ Features & Benefits -->
-        <section class="features">
-            <div class="container">
-                <h2>Features & Benefits</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h3>Sub-Minute Orbit Data</h3>
-                        <p>Stay 400x fresher than public TLEs—actionable, not stale.</p>
+                <h2 class="section-title">Unlock Unprecedented Orbital Awareness & Efficiency</h2>
+                <div class="highlighted-feature">
+                    <div class="highlighted-feature-icon">
+                        <span class="icon-placeholder-large"></span> 
                     </div>
-                    <div class="feature-item">
-                        <h3>Dollars-First Risk Score</h3>
-                        <p>Pc × mission value shows what's truly urgent.</p>
+                    <div class="highlighted-feature-content">
+                        <h3>Sub-Minute Orbit Data: Your Latency Advantage</h3>
+                        <p>Stay 400x fresher than public TLEs with our proprietary sensor fusion. Make critical decisions based on actionable, real-time intelligence, not stale data—drastically reducing unnecessary maneuvers and saving precious fuel.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3>One-Click Burn Generator</h3>
-                        <p>KubOS JSON, GMAT script, CCSDS packet ready for uplink.</p>
+                </div>
+                <div class="secondary-features-grid">
+                    <div class="feature-card">
+                        <span class="icon-placeholder-small"></span>
+                        <h4>Dollars-First Risk Score</h4>
+                        <p>Pc × mission value = true urgency. Align safety with P&L for clear, quantifiable decision-making that even your CFO will love.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3>Auto Compliance</h3>
-                        <p>TraCSS & EU-STM PDF in your inbox before the coffee cools.</p>
+                    <div class="feature-card">
+                        <span class="icon-placeholder-small"></span>
+                        <h4>One-Click Burn Generator</h4>
+                        <p>KubOS JSON, GMAT script, or CCSDS packet ready for instant uplink. Go from alert to executable command in seconds.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3>API-First, UI-Lite</h3>
-                        <p>Integrates with KSAT, AWS, Leaf; no new consoles required.</p>
+                    <div class="feature-card">
+                        <span class="icon-placeholder-small"></span>
+                        <h4>Auto Compliance</h4>
+                        <p>Regulator-ready TraCSS JSON & EU-STM PDFs generated and in your inbox before your coffee cools. Audit trails made easy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="icon-placeholder-small"></span>
+                        <h4>API-First, UI-Lite</h4>
+                        <p>Seamlessly integrates with KSAT, AWS Ground Station, Leaf Space, and your existing mission control consoles. No "extra dashboard" fatigue.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5 ▪ Quantified Impact (New Section) -->
-        <section class="quantified-impact features"> <!-- Reusing .features for styling context if needed -->
+        <!-- How It Works Section -->
+        <section id="how-it-works-section" class="how-it-works">
             <div class="container">
-                <h2>Quantified Impact</h2>
-                <div class="feature-grid"> <!-- Reusing grid layout -->
-                    <div class="feature-item">
-                        <h3>95 % Analyst Time Cut</h3>
-                        <p>120 min → 8 min per alert</p>
+                <h2 class="section-title">From Orbital Chaos to Automated Clarity</h2>
+                <div class="how-it-works-grid">
+                    <div class="problem-column">
+                        <h3>The Challenge: Alert Avalanche</h3>
+                        <div class="problem-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <p>Low-Earth orbit is on track to double active satellites by 2027. Today a 10-sat constellation sees 30 red-flag alerts per spacecraft each year—each one a two-hour grind through spreadsheets, GMAT scripts and TraCSS forms. The next ASAT breakup could multiply that workload overnight.</p>
                     </div>
-                    <div class="feature-item">
-                        <h3>17 % Average ΔV Saved</h3>
-                        <p>Lambert optimizer + tighter covariance</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>> 3x ROI for a 10-Sat Fleet</h3>
-                        <p>$144 k/y benefit vs $36 k fee</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Surge Proof</h3>
-                        <p>Alert volume can 5× with zero extra head-count</p>
+                    <div class="solution-column">
+                        <h3>Our Solution: The 10-Minute Loop</h3>
+                        <div class="solution-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <p>Sub-minute sensor fusion shrinks covariance, AI ranks alerts by Cost-of-Inaction, a Lambert solver delivers the lowest-ΔV burn, and the system auto-uploads the command plus a hash-chained TraCSS/EU-STM record. <strong>All in under 10 minutes.</strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Consolidated Info Section (Who We Serve, Reliability, Pilot Offer) -->
-        <section class="consolidated-info features"> <!-- Reusing .features for grid styling -->
+        <!-- Testimonials/Proof Section -->
+        <section id="testimonials-section" class="testimonials">
             <div class="container">
-                <!-- No main H2 for this section, titles are per card -->
-                <div class="feature-grid">
-                    <!-- Who We Serve Card -->
-                    <div class="feature-item">
-                        <h2>Who We Serve</h2>
-                        <p>Commercial constellations (5–300 sats), university tech demos, emerging IoT & EO fleets that need enterprise-grade STM without enterprise-grade head-count.</p>
+                <h2 class="section-title">Real Results, Quantifiable Impact</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <h3>95% Analyst Time Cut</h3>
+                        <p class="testimonial-detail">From 120 minutes to just 8 minutes per alert. Reclaim your team's valuable time.</p>
                     </div>
-
-                    <!-- Reliability & Audit Card -->
-                    <div class="feature-item">
-                        <h2>Reliability & Audit</h2>
-                        <p>SHA-256 hash-chain ledger locks every maneuver decision; Monte-Carlo validation runs 1 000 trials per burn.</p>
-                        <p>Built for OSC TraCSS today, EU Space-Act tomorrow.</p>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <h3>17% Average ΔV Saved</h3>
+                        <p class="testimonial-detail">Optimized Lambert solvers plus tighter covariance mean significant propellant savings and extended mission life.</p>
                     </div>
-
-                    <!-- Pilot Offer Card -->
-                    <div class="feature-item">
-                        <h2>Pilot Offer</h2>
-                        <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
-                           $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <h3>&gt;3x ROI for a 10-Sat Fleet</h3>
+                        <p class="testimonial-detail">Demonstrable $144k/year benefit vs. a $36k annual fee. Stellatus pays for itself many times over.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <span class="icon-placeholder-medium"></span>
+                        </div>
+                        <h3>Surge-Proof Your Operations</h3>
+                        <p class="testimonial-detail">Alert volume can increase 5x with zero additional headcount. Scale confidently without scaling your ops team.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Biography Section -->
-        <section class="biography">
+        <!-- FAQ Section -->
+        <section id="faq-section" class="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">How quickly can Stellatus be integrated into our current operations?</summary>
+                        <div class="faq-answer">
+                            <p>Stellatus is API-first and designed for rapid integration. For our pilot program, we aim for a go-live within 30 days, including connecting to your existing mission control consoles and ground station providers like KSAT, AWS, and Leaf Space.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What makes Stellatus different from existing SSA data providers or tools?</summary>
+                        <div class="faq-answer">
+                            <p>Stellatus focuses on an end-to-end, automated workflow: from sub-minute sensor fusion for superior data latency, to AI-driven Cost-of-Inaction risk scoring, one-click optimized burn generation, and auto-compliance reporting. We don't just give you data; we give you an actionable, regulator-ready plan in under 10 minutes.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Is the "Dollars-First Risk Score" just another way of showing Probability of Collision (Pc)?</summary>
+                        <div class="faq-answer">
+                            <p>No, it's more comprehensive. While Pc is a key input, our Cost-of-Inaction score also factors in the potential mission value at risk and your available ΔV budget. This provides a clear, monetized metric of urgency, helping prioritize maneuvers that truly protect your most valuable assets and align with overall mission objectives.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What kind of support can we expect?</summary>
+                        <div class="faq-answer">
+                            <p>Our founder brings an enterprise-grade support mindset from years at Microsoft. We understand that real satellites and revenue are on the line. You'll work directly with a team that includes orbital dynamics PhDs and former flight directors, ensuring expert support when you need it.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pilot Offer Section -->
+        <section id="pilot-offer-section" class="section-highlighted-info pilot-offer-highlight">
+             <div class="container">
+                <h2>Pilot Offer</h2>
+                <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
+                   $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
+            </div>
+        </section>
+
+        <!-- Founder Biography Section -->
+        <section id="founder-bio-section" class="biography">
             <div class="container bio-container">
                 <div class="bio-text">
                     <h2>Stellatus Founder</h2>
@@ -140,11 +204,19 @@
             </div>
         </section>
 
-        <!-- Contact Form -->
+        <!-- Final CTA Section -->
+        <section class="cta-final">
+             <div class="container">
+                <h2>Ready to collapse hours into minutes?</h2>
+                <p>Book a 15-minute demo and watch your next alert become an executable burn—papers included.</p>
+                <a href="#contact-form" class="cta-button primary">Book a 15-minute demo</a>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
         <section class="contact-section" id="contact-form">
             <div class="container">
                 <h2>Contact Us</h2>
-                <p>Send us a message and we'll get back to you.</p>
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Name:</label>
@@ -171,11 +243,11 @@
                     <a href="#">Privacy Policy</a> |
                     <a href="#">Terms of Service</a>
                 </nav>
-                <p>&copy; 2025 Stellatus LLC. All rights reserved.</p> <!-- Removed extra spaces -->
+                <p>&copy; 2025 Stellatus LLC. All rights reserved.</p>
                 <p><a href="https://stellat.us">stellat.us</a></p>
             </div>
         </footer>
-    </div>
+    </div> <!-- End of .main-content -->
 
     <script src="script.js"></script>
 </body>
