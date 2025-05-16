@@ -1103,5 +1103,28 @@ a:hover {
     }
 }
 
-/* ... (Existing responsive styles) ... */
+/* Responsive adjustments for How It Works Section */
+@media (max-width: 1024px) {
+    .problem-column h3, .solution-column h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works .section-title { /* Ensure title also responds if needed */
+        font-size: 2rem; 
+    }
+    .how-it-works-grid {
+        grid-template-columns: 1fr !important; /* Stack columns, add !important for emphasis */
+        gap: 30px;
+    }
+    .problem-column h3, .solution-column h3 {
+        font-size: 1.5rem;
+    }
+    .problem-column, .solution-column {
+        padding: 25px;
+    }
+}
+
+/* ... (Further existing responsive styles) ... */
 
