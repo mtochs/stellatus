@@ -1,7 +1,7 @@
 // Remove previous parallax scroll listener
 // document.addEventListener('scroll', function() { ... });
 
-const canvas = document.getElementById('starfield');
+const canvas = document.getElementById('oceanfield');
 const ctx = canvas.getContext('2d');
 
 function resizeCanvas() {
@@ -12,55 +12,78 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas(); // Initial size
 
-const numStars = 300; // Adjust for density
-const stars = [];
+const numParticles = 200; // Ocean particles (bubbles, debris, etc.)
+const particles = [];
 
-function initStars() {
-    stars.length = 0; // Clear existing stars on resize
-    for (let i = 0; i < numStars; i++) {
-        stars.push({
+function initParticles() {
+    particles.length = 0; // Clear existing particles on resize
+    for (let i = 0; i < numParticles; i++) {
+        particles.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            radius: Math.random() * 1.5 + 0.5, // Size range
-            alpha: Math.random() * 0.5 + 0.5, // Opacity range
-            speed: Math.random() * 0.3 + 0.1 // Speed range (pixels per frame)
+            radius: Math.random() * 2 + 0.5, // Size range for bubbles/particles
+            alpha: Math.random() * 0.4 + 0.2, // Opacity range (more subtle)
+            speed: Math.random() * 0.5 + 0.1, // Speed range (slower than stars)
+            drift: Math.random() * 0.2 - 0.1, // Horizontal drift
+            type: Math.random() > 0.7 ? 'bubble' : 'particle' // Different particle types
         });
     }
 }
 
-initStars();
-window.addEventListener('resize', initStars); // Re-initialize stars on resize
+initParticles();
+window.addEventListener('resize', initParticles); // Re-initialize particles on resize
 
-function animateStars() {
-    // Clear canvas with a subtle background color
-    ctx.fillStyle = '#050810'; // Match body background idea
+function animateOcean() {
+    // Create ocean depth gradient background
+    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    gradient.addColorStop(0, '#001122'); // Dark blue at top
+    gradient.addColorStop(0.3, '#002244'); // Slightly lighter
+    gradient.addColorStop(0.7, '#003366'); // Mid-depth blue
+    gradient.addColorStop(1, '#004488'); // Lighter blue at bottom (deeper)
+    
+    ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#e0e0ff'; // Star color
+    particles.forEach(particle => {
+        // Move particle up (we are descending effect) with slight horizontal drift
+        particle.y -= particle.speed;
+        particle.x += particle.drift;
 
-    stars.forEach(star => {
-        // Move star
-        star.y += star.speed;
-
-        // Wrap around vertically
-        if (star.y > canvas.height + star.radius) {
-            star.y = 0 - star.radius;
-            star.x = Math.random() * canvas.width; // Re-randomize x position
+        // Wrap around vertically and horizontally
+        if (particle.y < 0 - particle.radius) {
+            particle.y = canvas.height + particle.radius;
+            particle.x = Math.random() * canvas.width; // Re-randomize x position
+        }
+        if (particle.x > canvas.width + particle.radius) {
+            particle.x = 0 - particle.radius;
+        } else if (particle.x < 0 - particle.radius) {
+            particle.x = canvas.width + particle.radius;
         }
 
-        // Draw star
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.globalAlpha = star.alpha;
-        ctx.fill();
+        // Draw particle based on type
+        ctx.globalAlpha = particle.alpha;
+        
+        if (particle.type === 'bubble') {
+            // Draw bubbles as circles with slight glow
+            ctx.fillStyle = '#66aaff';
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+            ctx.fill();
+        } else {
+            // Draw particles as small dots
+            ctx.fillStyle = '#88ccff';
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.radius * 0.7, 0, Math.PI * 2);
+            ctx.fill();
+        }
     });
 
     ctx.globalAlpha = 1.0; // Reset global alpha
 
-    requestAnimationFrame(animateStars); // Loop animation
+    requestAnimationFrame(animateOcean); // Loop animation
 }
 
-animateStars();
+animateOcean();
 
 // --- Contact Form Handling ---
 document.getElementById('contactForm').addEventListener('submit', function(event) {

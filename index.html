@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellatus • Rapid Conjunction Resolver</title>
+    <title>Stellatus • Subsea Robotics-as-a-Service</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="starfield"></canvas>
+    <canvas id="oceanfield"></canvas>
 
     <!-- Navigation Bar -->
     <nav class="main-nav">
         <div class="container nav-container">
             <a href="#" class="nav-logo">Stellatus</a>
             <ul class="nav-links">
-                <li><a href="#features-section">Features</a></li>
-                <li><a href="#how-it-works-section">How It Works</a></li>
-                <li><a href="#testimonials-section">Results</a></li>
+                <li><a href="#mission-section">Our Mission</a></li>
                 <li><a href="#pilot-offer-section">Pilot Offer</a></li> 
-                <li><a href="#faq-section">FAQ</a></li>
                 <li><a href="#founder-bio-section">About</a></li>
             </ul>
-            <a href="#contact-form" class="cta-button primary nav-cta">Request a Demo</a>
+
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
         </div>
     </nav>
@@ -34,149 +31,31 @@
         <section class="hero hero-restructured">
             <div class="container hero-container-split">
                 <div class="hero-content-left">
-                    <h1>Conjunctions Solved in &lt; 10 Minutes</h1>
-                    <p class="subtitle">Stellatus turns every close-approach alert into an optimized burn-file and regulator-ready report—no extra dashboards, no late-night triage.</p>
+                    <h1>The Anduril of Ocean Robotics</h1>
+                    <p class="subtitle">Stellatus is the Anduril of ocean robotics, replacing costly, episodic vessel campaigns with a scalable software platform and resident AUVs that provide 24/7 subsea asset monitoring as a simple subscription. By productizing inspection as a service, we shift our customers from a reactive to a predictive maintenance model for a fraction of the cost.</p>
                     <div class="hero-ctas">
-                        <a href="#contact-form" class="cta-button primary">Request a Demo</a>
-                        <a href="#how-it-works-section" class="cta-link secondary">See the 10-Minute Loop</a>
+                        <a href="#mission-section" class="cta-link secondary">Learn Our Mission</a>
                     </div>
                     <div class="hero-social-proof">
-                        <p><strong>Impact:</strong> 95% Analyst Time Cut, 17% Average ΔV Saved.</p> 
+                        <p><strong>Impact:</strong> 24/7 Monitoring, Predictive Maintenance, Subscription Model.</p> 
                     </div>
                 </div>
                 <div class="hero-visual-right">
-                    <div class="visual-placeholder"></div> 
+                    <div class="visual-placeholder auv-visual"></div> 
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features-section" class="features-new">
+        <!-- Our Mission Section -->
+        <section id="mission-section" class="mission-section">
             <div class="container">
-                <h2 class="section-title">Unlock Unprecedented Orbital Awareness & Efficiency</h2>
-                <div class="highlighted-feature">
-                    <div class="highlighted-feature-icon">
-                        <span class="icon-placeholder-large"></span> 
-                    </div>
-                    <div class="highlighted-feature-content">
-                        <h3>Sub-Minute Orbit Data: Your Latency Advantage</h3>
-                        <p>Stay 400x fresher than public TLEs with our proprietary sensor fusion. Make critical decisions based on actionable, real-time intelligence, not stale data—drastically reducing unnecessary maneuvers and saving precious fuel.</p>
-                    </div>
-                </div>
-                <div class="secondary-features-grid">
-                    <div class="feature-card">
-                        <span class="icon-placeholder-small"></span>
-                        <h4>Dollars-First Risk Score</h4>
-                        <p>Pc × mission value = true urgency. Align safety with P&L for clear, quantifiable decision-making that even your CFO will love.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="icon-placeholder-small"></span>
-                        <h4>One-Click Burn Generator</h4>
-                        <p>KubOS JSON, GMAT script, or CCSDS packet ready for instant uplink. Go from alert to executable command in seconds.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="icon-placeholder-small"></span>
-                        <h4>Auto Compliance</h4>
-                        <p>Regulator-ready TraCSS JSON & EU-STM PDFs generated and in your inbox before your coffee cools. Audit trails made easy.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="icon-placeholder-small"></span>
-                        <h4>API-First, UI-Lite</h4>
-                        <p>Seamlessly integrates with KSAT, AWS Ground Station, Leaf Space, and your existing mission control consoles. No "extra dashboard" fatigue.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works-section" class="how-it-works">
-            <div class="container">
-                <h2 class="section-title">From Orbital Chaos to Automated Clarity</h2>
-                <div class="how-it-works-grid">
-                    <div class="problem-column">
-                        <h3>The Challenge: Alert Avalanche</h3>
-                        <div class="problem-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <p>Low-Earth orbit is on track to double active satellites by 2027. Today a 10-sat constellation sees 30 red-flag alerts per spacecraft each year—each one a two-hour grind through spreadsheets, GMAT scripts and TraCSS forms. The next ASAT breakup could multiply that workload overnight.</p>
-                    </div>
-                    <div class="solution-column">
-                        <h3>Our Solution: The 10-Minute Loop</h3>
-                        <div class="solution-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <p>Sub-minute sensor fusion shrinks covariance, AI ranks alerts by Cost-of-Inaction, a Lambert solver delivers the lowest-ΔV burn, and the system auto-uploads the command plus a hash-chained TraCSS/EU-STM record. <strong>All in under 10 minutes.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials/Proof Section -->
-        <section id="testimonials-section" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">Real Results, Quantifiable Impact</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <h3>95% Analyst Time Cut</h3>
-                        <p class="testimonial-detail">From 120 minutes to just 8 minutes per alert. Reclaim your team's valuable time.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <h3>17% Average ΔV Saved</h3>
-                        <p class="testimonial-detail">Optimized Lambert solvers plus tighter covariance mean significant propellant savings and extended mission life.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <h3>&gt;3x ROI for a 10-Sat Fleet</h3>
-                        <p class="testimonial-detail">Demonstrable $144k/year benefit vs. a $36k annual fee. Stellatus pays for itself many times over.</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-icon">
-                            <span class="icon-placeholder-medium"></span>
-                        </div>
-                        <h3>Surge-Proof Your Operations</h3>
-                        <p class="testimonial-detail">Alert volume can increase 5x with zero additional headcount. Scale confidently without scaling your ops team.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq-section" class="faq">
-            <div class="container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="faq-list">
-                    <details class="faq-item">
-                        <summary class="faq-question">How quickly can Stellatus be integrated into our current operations?</summary>
-                        <div class="faq-answer">
-                            <p>Stellatus is API-first and designed for rapid integration. For our pilot program, we aim for a go-live within 30 days, including connecting to your existing mission control consoles and ground station providers like KSAT, AWS, and Leaf Space.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">What makes Stellatus different from existing SSA data providers or tools?</summary>
-                        <div class="faq-answer">
-                            <p>Stellatus focuses on an end-to-end, automated workflow: from sub-minute sensor fusion for superior data latency, to AI-driven Cost-of-Inaction risk scoring, one-click optimized burn generation, and auto-compliance reporting. We don't just give you data; we give you an actionable, regulator-ready plan in under 10 minutes.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">Is the "Dollars-First Risk Score" just another way of showing Probability of Collision (Pc)?</summary>
-                        <div class="faq-answer">
-                            <p>No, it's more comprehensive. While Pc is a key input, our Cost-of-Inaction score also factors in the potential mission value at risk and your available ΔV budget. This provides a clear, monetized metric of urgency, helping prioritize maneuvers that truly protect your most valuable assets and align with overall mission objectives.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">What kind of support can we expect?</summary>
-                        <div class="faq-answer">
-                            <p>Our founder brings an enterprise-grade support mindset from years at Microsoft. We understand that real satellites and revenue are on the line. You'll work directly with a team that includes orbital dynamics PhDs and former flight directors, ensuring expert support when you need it.</p>
-                        </div>
-                    </details>
+                <h2 class="section-title">Our Mission</h2>
+                <div class="mission-content">
+                    <p>At Stellatus, we are pioneering a new era of subsea asset integrity, transforming the current episodic and resource-intensive inspection paradigm into one of continuous, intelligent oversight. Our mission begins in the most challenging ultra-deepwater environments, where the cost and logistical complexities of traditional vessel-based operations create an urgent demand for a radically more efficient solution. We empower operators to transition from reactive maintenance cycles to proactive, data-driven decision-making, ensuring unparalleled asset uptime and safety.</p>
+                    
+                    <p>We deliver this transformation through a seamlessly integrated system of autonomous, resident subsea robots managed by an advanced, cloud-native software platform. These intelligent AUVs live and operate on the seafloor, providing 24/7 monitoring capabilities that drastically reduce reliance on costly surface vessels and human intervention for routine tasks. Our contactless docking stations enable indefinite residency, allowing for on-demand inspection and real-time data acquisition previously unattainable at such depths.</p>
+                    
+                    <p>Stellatus's truly disruptive approach lies in our "Robotics-as-a-Service" model. By offering our complete solution as a predictable, multi-year subscription, we convert our customers' volatile operational expenditures into a stable, significantly lower annual investment. This not only provides immense cost savings but also delivers superior, continuous insights into asset health, fundamentally challenging the economics of traditional service providers and setting a new standard for subsea operational excellence.</p>
                 </div>
             </div>
         </section>
@@ -185,8 +64,8 @@
         <section id="pilot-offer-section" class="section-highlighted-info pilot-offer-highlight">
              <div class="container">
                 <h2>Pilot Offer</h2>
-                <p>60-day pilot • up to 25 sats • SLA < 10 min alert-to-burn<br>
-                   $300 / sat / month + $150 per accepted burn • Go live in 30 days.</p>
+                <p>6-month pilot deployment • Ultra-deepwater asset monitoring • 24/7 autonomous inspection<br>
+                   Robotics-as-a-Service model • Predictable subscription pricing • Deploy within 90 days.</p>
             </div>
         </section>
 
@@ -195,21 +74,12 @@
             <div class="container bio-container">
                 <div class="bio-text">
                     <h2>Stellatus Founder</h2>
-                    <p>Hi—I'm Mike Ochs, a long‑time enterprise‑tech operator (most recently at Microsoft, closing mission‑critical cloud deals with Cisco and AMD) who has traded quotas for orbits. I've spent the past year shoulder‑deep in space‑situational‑awareness code—using the same performance discipline that kept Fortune 100 CIOs happy—to shrink collision‑avoidance from a two‑hour spreadsheet exercise to an eight‑minute click.</p>
-                    <p>I work with a small bench of orbital‑dynamics PhDs and former flight‑directors (because space is unforgiving) and bring the enterprise‑grade support mindset you expect when real satellites—and revenue—are on the line. If the promise of "alert‑to‑burn in ten minutes" resonates, please reach out. I'm building Stellatus for ops leaders who measure success in ΔV, up‑time and sleep regained.</p>
+                    <p>Hi—I'm Mike Ochs, a long-time enterprise-tech operator (most recently at Microsoft, closing mission-critical cloud deals with Cisco and AMD) who has traded quotas for the ocean depths. I've spent the past year deep in subsea robotics and autonomous systems—applying the same performance discipline that kept Fortune 100 CIOs happy—to transform episodic vessel campaigns into continuous, intelligent monitoring.</p>
+                    <p>My unique combination of enterprise software expertise and deep technical understanding of autonomous systems positions me to tackle the monumental challenge of subsea asset integrity. I work with a specialized team of robotics engineers, subsea operations experts, and former offshore veterans (because the ocean is unforgiving) while bringing the enterprise-grade platform mindset essential for scaling in this capital-intensive industry. If the promise of "24/7 subsea monitoring as a subscription" resonates, please reach out. I'm building Stellatus for operators who measure success in asset uptime, cost reduction, and operational predictability.</p>
                 </div>
                 <div class="bio-image">
-                    <img src="me.jpg" alt="Mike Ochs - Stellatus Founder">
+                    <img src="./me.png" alt="Mike Ochs - Stellatus Founder" loading="eager">
                 </div>
-            </div>
-        </section>
-
-        <!-- Final CTA Section -->
-        <section class="cta-final">
-             <div class="container">
-                <h2>Ready to collapse hours into minutes?</h2>
-                <p>Book a 15-minute demo and watch your next alert become an executable burn—papers included.</p>
-                <a href="#contact-form" class="cta-button primary">Book a 15-minute demo</a>
             </div>
         </section>
 

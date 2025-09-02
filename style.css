@@ -15,8 +15,8 @@ body, html {
     padding-top: 70px; /* Offset for fixed navbar */
 }
 
-/* Canvas Starfield */
-#starfield {
+/* Canvas Ocean Background */
+#oceanfield {
     position: fixed;
     top: 0;
     left: 0;
@@ -306,11 +306,16 @@ a:hover {
 }
 
 .bio-image img {
-    max-width: 70%; /* Changed from 100% to reduce image size */
+    max-width: 80%; /* Increased from 55% - about 45% larger */
     height: auto;
-    border-radius: 8px; /* Optional: rounded corners for the image */
-    border: 2px solid #444488; /* Optional: subtle border */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-radius: 15px; /* More rounded for modern look */
+    /* Enhanced shadow for depth */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 4px 12px rgba(66, 170, 255, 0.2);
+    /* Subtle ocean-themed glow background */
+    background: radial-gradient(ellipse at center, rgba(66, 170, 255, 0.08) 0%, transparent 70%);
+    padding: 8px; /* Padding to show subtle glow effect */
+    /* Keep it simple and bright */
+    image-rendering: auto;
 }
 
 /* Contact Form Styles */
@@ -676,16 +681,11 @@ a:hover {
     max-width: 480px; /* Increased max-width slightly */ 
     height: 100%; 
     min-height: 380px; /* Ensure a good minimum height */
-    background-image: url('hero-visual.png');
+    background-image: url('hero-visual-auv.png');
     background-size: contain; /* Scale image to fit within bounds, maintain aspect ratio */
     background-position: center center;
     background-repeat: no-repeat;
-    /* Remove old placeholder styles */
-    /* background-color: rgba(40, 40, 80, 0.5); */
-    /* border: 2px dashed #5566ff; */
     border-radius: 10px;
-    /* color: #88aaff; */
-    /* font-size: 1.2rem; */
 }
 .visual-placeholder::after {
     content: ""; /* Remove text content */
@@ -776,355 +776,70 @@ a:hover {
     }
 }
 
-/* Existing responsive styles will be reviewed and merged later */
-
-/* New Features Section Styling */
-.features-new {
+/* Mission Section Styling */
+.mission-section {
     padding: 60px 0;
-    background-color: #08081B; /* Slightly different dark shade */
+    background-color: #08081B; /* Consistent with other sections */
 }
 
-.features-new .section-title {
+.mission-section .section-title {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 40px;
     color: #ffffff;
     border-bottom: 2px solid #5566ff;
     padding-bottom: 10px;
-    display: inline-block; /* Center the border correctly */
+    display: inline-block;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.highlighted-feature {
-    display: flex;
-    align-items: center; /* Vertically center icon and content */
-    gap: 30px;
-    background-color: rgba(20, 20, 50, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-    border: 1px solid #2a2a5c;
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-.highlighted-feature-icon {
-    flex-basis: 80px; /* Fixed size for icon container */
-    text-align: center;
-}
-
-.icon-placeholder-large {
-    font-size: 3.5rem; /* Large icon */
-    color: #7788ff;
-    /* Replace with actual icon/SVG later */
-}
-
-.highlighted-feature-content h3 {
-    font-size: 2rem;
-    color: #aabbff;
-    margin-bottom: 10px;
-}
-
-.highlighted-feature-content p {
+.mission-content p {
     font-size: 1.1rem;
     color: #c0c0ee;
-    line-height: 1.7;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
-.secondary-features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+.mission-content p:last-child {
+    margin-bottom: 0;
 }
 
-.feature-card {
-    background-color: #15152f; 
-    padding: 25px;
-    border-radius: 8px;
-    text-align: left; /* Align text left within cards */
-    border: 1px solid #25254D;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Removed old Features Section Styling - no longer needed for subsea pivot */
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(85, 102, 255, 0.15);
-}
-
-.icon-placeholder-small {
-    font-size: 2rem; /* Smaller icon */
-    color: #88aaff;
-    display: block;
-    margin-bottom: 15px;
-    /* Replace with actual icons/SVGs later */
-}
-
-.feature-card h4 {
-    font-size: 1.4rem;
-    color: #99aaff;
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    font-size: 0.95rem;
-    color: #b0b0dd;
-    line-height: 1.6;
-}
-
-/* Responsive adjustments for New Features Section */
+/* Responsive adjustments for Mission Section */
 @media (max-width: 1024px) {
-    .features-new .section-title {
+    .mission-section .section-title {
         font-size: 2.3rem;
-    }
-    .highlighted-feature-content h3 {
-        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 768px) {
-    .features-new .section-title {
+    .mission-section .section-title {
         font-size: 2rem;
         margin-bottom: 30px;
     }
-    .highlighted-feature {
-        flex-direction: column; /* Stack icon and content */
-        text-align: center; /* Center text when stacked */
-        padding: 25px;
-    }
-    .highlighted-feature-icon {
-        margin-bottom: 15px;
-    }
-    .highlighted-feature-content h3 {
-        font-size: 1.7rem;
-        text-align: center;
-    }
-    .highlighted-feature-content p {
+    .mission-content p {
         font-size: 1rem;
     }
-    .secondary-features-grid {
-        grid-template-columns: 1fr; /* Stack cards */
-    }
-    .feature-card {
-        text-align: center;
-    }
-    .icon-placeholder-small {
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
-/* How It Works Section Styling */
-.how-it-works {
-    padding: 60px 0;
-    /* background-color: #0A0A1E; */ /* Can use a slightly different shade or keep consistent */
-}
+/* Removed How It Works Section - no longer needed for subsea pivot */
 
-.how-it-works .section-title {
-    /* Uses existing .section-title style from features-new */
-    margin-bottom: 50px;
-}
+/* Removed Testimonials Section - no longer needed for subsea pivot */
 
-.how-it-works-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 40px;
-    align-items: flex-start; /* Align items to the top of their cell */
-}
+/* Removed FAQ Section - no longer needed for subsea pivot */
 
-.problem-column, .solution-column {
-    background-color: rgba(20, 20, 50, 0.5); /* Subtle background for each column */
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #2a2a5c;
-    text-align: center; /* Center content within columns */
-}
+/* Removed FAQ responsive styles - no longer needed for subsea pivot */
 
-.problem-column h3, .solution-column h3 {
-    font-size: 1.8rem;
-    color: #aabbff;
-    margin-bottom: 20px;
-}
-
-.icon-placeholder-medium {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.problem-icon .icon-placeholder-medium {
-    color: #ff8080; /* Reddish for problem */
-}
-
-.solution-icon .icon-placeholder-medium {
-    color: #80ff80; /* Greenish for solution */
-}
-
-.problem-column p, .solution-column p {
-    font-size: 1.05rem;
-    color: #c0c0ee;
-    line-height: 1.7;
-}
-
-/* Testimonials Section Styling */
-.testimonials {
-    padding: 60px 0;
-    background-color: #08081B; /* Consistent with features section */
-}
-
-.testimonials .section-title {
-    /* Uses existing .section-title style */
-    margin-bottom: 50px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background-color: #1A1A3A; /* Slightly different from feature-card */
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center; /* Center content in cards */
-    border: 1px solid #2f2f5f;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.testimonial-icon {
-    margin-bottom: 15px;
-}
-
-/* .testimonial-icon .icon-placeholder-medium is already styled */
-
-.testimonial-card h3 {
-    font-size: 1.7rem;
-    color: #c5c5f5; /* Slightly softer than feature titles */
-    margin-bottom: 10px;
-}
-
-.testimonial-detail {
-    font-size: 1rem;
-    color: #b0b0dd;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.testimonial-source {
-    font-size: 0.9rem;
-    color: #88aaff;
-    font-style: italic;
-}
-
-/* FAQ Section Styling */
-.faq {
-    padding: 60px 0;
-}
-
-.faq .section-title {
-    /* Uses existing .section-title style */
-    margin-bottom: 50px;
-}
-
-.faq-list {
-    max-width: 800px; /* Constrain width of FAQ list */
-    margin: 0 auto;
-}
-
-.faq-item {
-    background-color: rgba(20, 20, 50, 0.5);
-    border: 1px solid #2a2a5c;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.faq-item[open] {
-    background-color: rgba(25, 25, 60, 0.7);
-}
-
-.faq-question {
-    padding: 20px;
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #c5c5f5;
-    cursor: pointer;
-    position: relative; /* For custom marker */
-    list-style: none; /* Remove default marker */
-    transition: color 0.3s ease;
-}
-
-.faq-question::-webkit-details-marker {
-    display: none; /* Hide default marker in WebKit */
-}
-
-.faq-question::after { /* Custom marker */
-    content: '+';
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.8rem;
-    color: #88aaff;
-    transition: transform 0.3s ease;
-}
-
-.faq-item[open] .faq-question::after {
-    content: '−';
-    transform: translateY(-50%) rotate(180deg); /* Rotate minus sign for open state - not needed if content is just minus */
-}
-
-.faq-item[open] .faq-question {
-    color: #ffffff;
-}
-
-.faq-answer {
-    padding: 0 20px 20px 20px;
-    color: #b0b0dd;
-    line-height: 1.7;
-    font-size: 1rem;
-}
-
-.faq-answer p {
-    margin: 0;
-}
-
-/* Responsive adjustments for FAQ Section */
-@media (max-width: 768px) {
-    .faq-question {
-        font-size: 1.1rem;
-        padding-right: 40px; /* Ensure space for marker */
-    }
-    .faq-question::after {
-        font-size: 1.5rem;
-    }
-    .faq-answer {
-        font-size: 0.95rem;
-    }
-}
-
-/* Responsive adjustments for How It Works Section */
-@media (max-width: 1024px) {
-    .problem-column h3, .solution-column h3 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .how-it-works .section-title { /* Ensure title also responds if needed */
-        font-size: 2rem; 
-    }
-    .how-it-works-grid {
-        grid-template-columns: 1fr !important; /* Stack columns, add !important for emphasis */
-        gap: 30px;
-    }
-    .problem-column h3, .solution-column h3 {
-        font-size: 1.5rem;
-    }
-    .problem-column, .solution-column {
-        padding: 25px;
-    }
-}
+/* Removed How It Works responsive styles - no longer needed for subsea pivot */
 
 /* ... (Further existing responsive styles) ... */
 
