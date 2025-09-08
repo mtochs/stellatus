@@ -404,14 +404,9 @@ a:hover {
         font-size: 2rem;
     }
 
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .features .feature-grid,
-    .challenge-list {
-        /* Adjust grid for medium screens - maybe 2 columns */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Mission section responsive */
+    .mission-section .section-title {
+        font-size: 2.3rem;
     }
 }
 
@@ -419,12 +414,12 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 20px 10px; /* Reduce container padding */
+        padding: 20px 10px;
     }
 
     section {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         margin-bottom: 20px;
     }
 
@@ -437,78 +432,110 @@ a:hover {
         margin-bottom: 1.5rem;
     }
 
-    .hero {
-        padding: 100px 0; /* Reduce hero padding */
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
     .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 12px 24px;
+        font-size: 0.95rem;
     }
 
-    /* Stack grid items vertically on mobile */
-    .features .feature-grid,
-    .challenge-list {
-        grid-template-columns: 1fr; /* Single column */
-        gap: 20px;
+    .cta-link {
+        font-size: 0.95rem;
     }
 
-    .features .feature-item,
-    .challenge-list li {
-        padding: 20px;
+    /* Mission section */
+    .mission-section {
+        padding: 50px 0;
     }
 
-    .challenge-list li strong {
-        font-size: 1.1rem;
+    .mission-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .mission-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Pilot Offer section */
+    .section-highlighted-info {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .section-highlighted-info h2 {
+        font-size: 2.2rem;
     }
 
     /* Biography section stacking on mobile */
     .bio-container {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center items when stacked */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .bio-text {
-        order: 2; /* Text below image */
-        text-align: center; /* Center text on mobile */
+        order: 2;
+        text-align: center;
+        margin-bottom: 0;
     }
 
     .bio-text h2 {
-        text-align: center; /* Center heading on mobile */
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .bio-text p {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 
     .bio-image {
-        order: 1; /* Image above text */
-        margin-bottom: 20px; /* Space between image and text */
-        max-width: 250px; /* Limit image size on mobile */
+        order: 1;
+        margin-bottom: 30px;
+        max-width: 280px;
     }
 
+    .bio-image img {
+        max-width: 70%;
+    }
+
+    /* Contact form */
     #contactForm {
-        padding: 15px;
+        padding: 20px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 0;
     }
 
     footer .container {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 20px 10px;
     }
 
     footer nav a {
-        margin: 0 5px;
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
     }
 }
 
 /* Smaller mobile devices (~480px and below) */
 @media (max-width: 480px) {
-    body {
-        line-height: 1.5;
+    .container {
+        width: 98%;
+        padding: 15px 5px;
     }
 
     h1 {
@@ -519,40 +546,50 @@ a:hover {
         font-size: 1.6rem;
     }
 
-    .hero {
-        padding: 80px 0;
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .cta-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
     }
 
-    .hero p {
+    /* Mission section */
+    .mission-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Biography */
+    .bio-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .bio-text p {
         font-size: 0.95rem;
     }
 
-    .cta-button.primary {
-        margin-right: 10px;
-        display: block; /* Stack hero buttons */
-        margin-bottom: 15px;
-        width: calc(100% - 40px); /* Full width minus padding */
-        margin-left: auto;
-        margin-right: auto;
-
+    .bio-image {
+        max-width: 250px;
     }
 
-    .cta-link.secondary {
-        display: block; /* Stack hero buttons */
-    }
-
+    /* Contact form */
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group textarea {
         padding: 10px;
     }
 
-    #contactForm button {
-        padding: 12px 20px;
+    footer nav a {
+        display: block;
+        margin: 5px 0;
     }
 }
 
@@ -623,57 +660,58 @@ a:hover {
 
 /* Restructured Hero Section */
 .hero-restructured {
-    padding: 60px 0; /* Adjust padding as needed */
-    background-color: transparent; /* Already set for sections, but ensure */
+    padding: 80px 0; /* Increased padding for centered layout */
+    background-color: transparent;
+    /* Add hero background image */
+    background-image: linear-gradient(rgba(0, 20, 40, 0.7), rgba(0, 30, 60, 0.6)), url('hero-bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    position: relative;
+    /* Ensure hero is above ocean canvas but background is behind */
+    z-index: 1;
 }
 
-.hero-container-split {
+.hero-container-centered {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 40px;
+    min-height: 60vh; /* Give hero more presence */
 }
 
-.hero-content-left {
-    flex: 1.2; /* Give slightly more space to text content */
-    text-align: left;
+.hero-content-centered {
+    text-align: center;
+    max-width: 900px; /* Control content width */
 }
 
-.hero-content-left h1 {
-    font-size: 3.8rem; /* Even larger */
-    text-align: left;
-    text-shadow: 0 0 15px rgba(170, 190, 255, 0.7);
-    margin-bottom: 1rem;
+.hero-content-centered h1 {
+    font-size: 3.8rem;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(170, 190, 255, 0.8);
+    margin-bottom: 0.5rem; /* Reduced from 1rem - half the spacing */
+    line-height: 1.1; /* Tighter line height */
 }
 
-.hero-content-left .subtitle {
-    font-size: 1.2rem;
+.hero-content-centered .subtitle {
+    font-size: 1.3rem;
     color: #c0c0ee;
-    margin-bottom: 2rem;
-    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
 }
 
 .hero-ctas {
     margin-bottom: 2rem;
-}
-
-.hero-ctas .cta-button.primary {
-    margin-right: 20px;
+    text-align: center;
 }
 
 .hero-social-proof {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #a0a0cc;
+    text-align: center;
 }
 .hero-social-proof strong {
     color: #c0c0ee;
-}
-
-.hero-visual-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 350px; /* Ensure it has some height even if bg fails or is smaller */
 }
 
 .visual-placeholder {
@@ -693,21 +731,17 @@ a:hover {
 
 /* Responsive adjustments for Nav and new Hero */
 @media (max-width: 1024px) {
-    .hero-content-left h1 {
+    .hero-content-centered h1 {
         font-size: 3.2rem;
     }
-    .hero-visual-right {
-        max-width: 400px;
-        min-height: 300px;
-    }
-    .visual-placeholder {
-        /* height: 300px; No longer fixed height, will adapt */
-        min-height: 300px;
-        max-width: 400px;
+    .hero-container-centered {
+        min-height: 50vh; /* Reduced height on tablets */
     }
 }
 
+/* Mobile Navigation and Hero - integrated with main mobile styles above */
 @media (max-width: 768px) {
+    /* Navigation */
     body {
         padding-top: 60px; /* Adjust for slightly smaller fixed nav */
     }
@@ -727,6 +761,7 @@ a:hover {
         flex-direction: column;
         padding: 20px 0;
         border-top: 1px solid #2a2a5c;
+        z-index: 1000; /* Ensure menu appears above everything */
     }
     .nav-links.active {
         display: flex; /* Show when active */
@@ -742,37 +777,32 @@ a:hover {
         display: block;
     }
 
-    .hero-container-split {
-        flex-direction: column;
-        text-align: center;
+    /* Hero section mobile */
+    .hero-restructured {
+        background-attachment: scroll; /* Fixed attachment doesn't work well on mobile */
+        padding: 60px 0; /* Reduced padding on mobile */
+        min-height: 70vh; /* Ensure good height on mobile */
     }
-    .hero-content-left {
-        text-align: center;
-        margin-bottom: 30px;
+    .hero-container-centered {
+        min-height: 60vh; /* Adequate height for mobile */
+        padding: 20px 0;
     }
-    .hero-content-left h1, .hero-content-left .subtitle {
-        text-align: center;
-        max-width: 100%;
+    .hero-content-centered {
+        max-width: 100%; /* Use full width on mobile */
+        padding: 0 10px;
     }
-    .hero-ctas {
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap; /* Allow buttons to wrap */
+    .hero-content-centered h1 {
+        font-size: 2.2rem; /* Slightly smaller on mobile */
+        margin-bottom: 0.4rem; /* Keep reduced spacing on mobile */
+        line-height: 1.1;
     }
-    .hero-ctas .cta-button.primary {
-        margin-bottom: 15px; /* Space when buttons stack */
+    .hero-content-centered .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
     }
-
-    .hero-visual-right {
-        width: 100%;
-        max-width: 380px; /* Adjust placeholder size for mobile */
-        min-height: 280px;
-        margin-top: 20px; /* Add some space when stacked */
-    }
-    .visual-placeholder {
-        /* height: 280px; No longer fixed height */
-        min-height: 280px;
-        max-width: 380px;
+    .hero-social-proof {
+        font-size: 0.9rem;
     }
 }
 
@@ -814,22 +844,7 @@ a:hover {
 
 /* Removed old Features Section Styling - no longer needed for subsea pivot */
 
-/* Responsive adjustments for Mission Section */
-@media (max-width: 1024px) {
-    .mission-section .section-title {
-        font-size: 2.3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .mission-section .section-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-    .mission-content p {
-        font-size: 1rem;
-    }
-}
+/* Mission responsive styles are now integrated above */
 
 /* Removed How It Works Section - no longer needed for subsea pivot */
 
