@@ -546,6 +546,19 @@ a:hover {
         font-size: 1.6rem;
     }
 
+    /* Hero optimizations for very small screens */
+    .hero-restructured {
+        min-height: 60vh; /* Reduce height on very small screens */
+        padding: 40px 0; /* Further reduce padding */
+        /* Stronger gradient overlay for better text readability on small screens */
+        background-image: linear-gradient(rgba(0, 20, 40, 0.85), rgba(0, 30, 60, 0.8)), url('hero-bg.jpeg');
+    }
+
+    .hero-container-centered {
+        min-height: 50vh;
+        padding: 15px 0;
+    }
+
     .cta-button {
         padding: 10px 20px;
         font-size: 0.9rem;
@@ -590,6 +603,66 @@ a:hover {
     footer nav a {
         display: block;
         margin: 5px 0;
+    }
+}
+
+/* Mobile landscape orientation optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-restructured {
+        min-height: 80vh; /* Increase height in landscape mode */
+        padding: 30px 0; /* Reduce padding to fit content */
+    }
+    
+    .hero-container-centered {
+        min-height: 70vh;
+    }
+    
+    .hero-content-centered h1 {
+        font-size: 2rem; /* Slightly smaller in landscape */
+        margin-bottom: 0.3rem;
+    }
+    
+    .hero-content-centered .subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* High DPI/Retina display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-restructured {
+        /* Ensure crisp background on high-DPI displays */
+        background-image: linear-gradient(rgba(0, 20, 40, 0.7), rgba(0, 30, 60, 0.6)), url('hero-bg.jpeg');
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .hero-restructured {
+        /* Fix for iOS Safari background-attachment issues */
+        background-attachment: scroll !important;
+        /* Use px instead of vh for better iOS compatibility */
+        min-height: 500px;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-restructured {
+            min-height: 400px;
+        }
+        
+        .hero-container-centered {
+            min-height: 350px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-restructured {
+            min-height: 350px;
+        }
+        
+        .hero-container-centered {
+            min-height: 300px;
+        }
     }
 }
 
@@ -661,7 +734,8 @@ a:hover {
 /* Restructured Hero Section */
 .hero-restructured {
     padding: 80px 0; /* Increased padding for centered layout */
-    background-color: transparent;
+    /* Fallback gradient background if image fails to load */
+    background: linear-gradient(135deg, #001122 0%, #002244 50%, #003366 100%);
     /* Add hero background image */
     background-image: linear-gradient(rgba(0, 20, 40, 0.7), rgba(0, 30, 60, 0.6)), url('hero-bg.jpeg');
     background-size: cover;
@@ -671,6 +745,10 @@ a:hover {
     position: relative;
     /* Ensure hero is above ocean canvas but background is behind */
     z-index: 1;
+    /* Optimize for mobile loading */
+    will-change: transform;
+    /* Ensure minimum height even without image */
+    min-height: 60vh;
 }
 
 .hero-container-centered {
@@ -782,6 +860,13 @@ a:hover {
         background-attachment: scroll; /* Fixed attachment doesn't work well on mobile */
         padding: 60px 0; /* Reduced padding on mobile */
         min-height: 70vh; /* Ensure good height on mobile */
+        /* Optimize background for mobile performance */
+        background-size: cover;
+        background-position: center center;
+        /* Ensure image loads properly on mobile */
+        background-image: linear-gradient(rgba(0, 20, 40, 0.8), rgba(0, 30, 60, 0.7)), url('hero-bg.jpeg');
+        /* Remove will-change on mobile for better performance */
+        will-change: auto;
     }
     .hero-container-centered {
         min-height: 60vh; /* Adequate height for mobile */
