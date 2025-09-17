@@ -427,8 +427,6 @@ p { font-size: 16px; }
   :root { --header-height: 64px; }
   .header-inner { height: var(--header-height); }
   
-  .logo-text { display: none; } /* Hide 'Stellatus' text */
-
   .hero-section { min-height: 85vh; }
   .hero-content { padding: 48px 0; }
   .hero-content h1 { font-size: clamp(28px, 8vw, 40px); }
