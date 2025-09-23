@@ -27,27 +27,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Reveal-on-scroll animations
   const revealElements = document.querySelectorAll(".reveal");
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
-  );
+  
+  // Check if IntersectionObserver is supported
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.05, // Lower threshold for mobile
+        rootMargin: "0px 0px -5% 0px" // Less aggressive margin for mobile
+      }
+    );
 
-  // Initial pass so content is visible even before scrolling
-  revealElements.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.9) {
+    // Initial pass so content is visible even before scrolling
+    revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.95) { // More generous initial reveal
+        el.classList.add("reveal-visible");
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver support
+    revealElements.forEach((el) => {
       el.classList.add("reveal-visible");
-    } else {
-      revealObserver.observe(el);
-    }
-  });
+    });
+  }
 
   // Active nav highlight based on visible section
   const navLinks = Array.from(document.querySelectorAll(".main-nav .nav-link"));
@@ -132,5 +144,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
