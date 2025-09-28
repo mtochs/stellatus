@@ -28,7 +28,7 @@
         color: #EAEAF2;
       }
       .hero-visual {
-        margin: 40px auto 60px;
+        margin: 0 auto 60px;
         text-align: center;
         max-width: 900px;
       }
@@ -65,6 +65,7 @@
         aspect-ratio: 3/4;
         object-fit: cover;
         border: 3px solid #D4AF37;
+        border-radius: 16px;
         box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
       }
       .founder-content h3 {
@@ -78,12 +79,15 @@
         color: #EAEAF2;
       }
       .philosophy-section {
-        margin-top: 0;
+        margin: 0 auto;
         text-align: center;
-        padding: 40px 30px;
+        padding: 30px 25px;
         background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(234,205,111,0.03) 100%);
         border-radius: 20px;
         border: 1px solid rgba(212,175,55,0.2);
+        max-width: none;
+        width: 100%;
+        box-sizing: border-box;
       }
       .philosophy-section h3 {
         font-size: 1.5em;
@@ -91,10 +95,11 @@
         color: var(--text);
       }
       .philosophy-section p {
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
         line-height: 1.7;
         color: #EAEAF2;
+        padding: 0 10px;
       }
       .badges {
         display: flex;
@@ -148,21 +153,21 @@
     <main id="main" tabindex="-1">
       <section class="about-page section">
         <div class="container">
+          <div class="hero-visual">
+            <img src="images/leadership-vision.webp" alt="Mining industry leaders discussing tailings monitoring strategy" />
+          </div>
+
           <div class="about-hero">
             <h1>From insights to outcomes</h1>
             <p>
               We're a software‑first company focused on <strong>operational outcomes</strong> for tailings. We fuse existing data, automate the routine, and give EORs a cleaner, faster evidence trail.
             </p>
-          <p style="margin-top: 20px;">
-            Our platform transforms the complex, multi-source data streams you already collect into unified, actionable intelligence. We believe that better monitoring leads to better decisions, and better decisions protect communities, environments, and assets.
-          </p>
-        </div>
+            <p style="margin-top: 20px;">
+              Our platform transforms the complex, multi-source data streams you already collect into unified, actionable intelligence. We believe that better monitoring leads to better decisions, and better decisions protect communities, environments, and assets.
+            </p>
+          </div>
 
-        <div class="hero-visual">
-          <img src="images/leadership-vision.webp" alt="Mining industry leaders discussing tailings monitoring strategy" />
-        </div>
-
-        <div class="philosophy-section">
+          <div class="philosophy-section">
           <h3>Our Mission</h3>
           <p>
             Stellatus exists to bridge the critical gap between data collection and decisive action in tailings management. We recognize that mining operations generate vast amounts of monitoring data, but transforming that data into timely, defensible decisions remains a challenge. Our platform solves this by creating a continuous, intelligent layer that unifies disparate data sources, applies advanced analytics, and delivers Engineer of Record (EOR)-ready outputs that meet Global Industry Standard on Tailings Management (GISTM) standards. We're not just another monitoring vendor—we're your partner in operational excellence and risk reduction.
