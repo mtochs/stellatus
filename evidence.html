@@ -13,20 +13,18 @@
     <style>
       .evidence-page { padding: 100px 0 80px; }
       .memorial-section {
-        margin: 60px 0;
+        margin: 0 0 60px;
         text-align: center;
       }
       .memorial-image {
-        max-width: 100%;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
         border-radius: 16px;
-        box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        border: 3px solid #D4AF37;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), 0 12px 32px rgba(0,0,0,0.4);
         opacity: 0.9;
-      }
-      .memorial-caption {
-        margin-top: 20px;
-        color: #ADADB8;
-        font-size: 0.95em;
-        font-style: italic;
       }
       .evidence-cards { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 48px; }
       .evidence-card { 
@@ -102,17 +100,14 @@
     <main id="main" tabindex="-1">
       <section class="evidence-page section">
         <div class="container">
-          <h1 style="text-align: center; font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; text-shadow: 0 0 20px rgba(234, 205, 111, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);">Evidence</h1>
-          <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #EAEAF2; font-size: 1.1em;">
-            Case studies demonstrating the value of continuous monitoring and data fusion for tailings safety
-          </p>
-
           <div class="memorial-section">
             <img src="images/memorial-landscape.webp" alt="Dawn over mining landscape - In memory of those affected by tailings failures" class="memorial-image" />
-            <p class="memorial-caption">
-              In memory of those affected by tailings failures. Our work honors their memory by preventing future tragedies.
-            </p>
           </div>
+
+          <h1 style="text-align: center; font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; text-shadow: 0 0 20px rgba(234, 205, 111, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);">Evidence</h1>
+          <p style="text-align: center; max-width: 700px; margin: 0 auto 48px; color: #EAEAF2; font-size: 1.1em;">
+            Case studies demonstrating the value of continuous monitoring and data fusion for tailings safety
+          </p>
 
           <div class="evidence-cards">
             <div class="evidence-card">
