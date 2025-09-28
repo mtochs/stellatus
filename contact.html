@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stellatus | Contact</title>
+    <meta name="description" content="Start your 12-week TSF monitoring pilot. Book a 60-minute working session to discuss your tailings monitoring needs." />
+    <link rel="icon" type="image/x-icon" href="stellatus-logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-page { 
+        padding: 100px 0 80px; 
+        min-height: calc(100vh - 200px);
+      }
+      .contact-hero {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+      }
+      .contact-hero h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 24px;
+        text-shadow: 0 0 20px rgba(234, 205, 111, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+      }
+      .contact-hero p {
+        font-size: 1.2em;
+        line-height: 1.7;
+        color: #EAEAF2;
+      }
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: start;
+      }
+      .contact-form-section {
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+        border: 1px solid rgba(212,175,55,0.25);
+        border-radius: 20px;
+        padding: 40px;
+      }
+      .contact-form-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 24px;
+        color: var(--text);
+      }
+      .contact-form-section .form-row {
+        margin-bottom: 20px;
+      }
+      .contact-form-section label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .contact-form-section input,
+      .contact-form-section textarea,
+      .contact-form-section select {
+        width: 100%;
+        padding: 12px 16px;
+        background: rgba(34,34,34,0.95);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        color: var(--accent);
+        font-size: 1em;
+        transition: all var(--transition-fast);
+      }
+      .contact-form-section select option {
+        background: #222222;
+        color: #D4AF37;
+      }
+      .contact-form-section input:focus,
+      .contact-form-section textarea:focus,
+      .contact-form-section select:focus {
+        background: rgba(255,255,255,0.08);
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+        outline: none;
+      }
+      .contact-form-section textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      .contact-form-section .btn {
+        width: 100%;
+        margin-top: 12px;
+      }
+      .contact-info {
+        padding: 20px 0;
+      }
+      .info-card {
+        background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(234,205,111,0.04) 100%);
+        border: 1px solid rgba(212,175,55,0.2);
+        border-radius: 16px;
+        padding: 32px;
+        margin-bottom: 32px;
+      }
+      .info-card h3 {
+        font-size: 1.3em;
+        margin-bottom: 16px;
+        color: var(--accent);
+      }
+      .info-card p {
+        line-height: 1.6;
+        color: #EAEAF2;
+        margin-bottom: 16px;
+      }
+      .info-card .btn {
+        display: inline-flex;
+        margin-top: 8px;
+      }
+      .quick-links {
+        margin-top: 32px;
+      }
+      .quick-links h3 {
+        font-size: 1.2em;
+        margin-bottom: 16px;
+        color: var(--text);
+      }
+      .quick-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      .quick-links li {
+        padding: 8px 0;
+        color: #EAEAF2;
+      }
+      .quick-links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color var(--transition-fast);
+      }
+      .quick-links a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="Stellatus - Home">
+          <img src="images/stellatus-logo-star-circuit.png" alt="Stellatus logo" />
+          <span class="logo-text">Stellatus</span>
+        </a>
+        <button class="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+          <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Primary">
+          <a class="nav-link" href="evidence.html">Evidence</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+          <a class="nav-link nav-link-light" href="labs.html">Labs</a>
+        </nav>
+        <a href="contact.html" class="btn btn-primary sticky-cta">Start 12‑week pilot</a>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="contact-page section">
+        <div class="container">
+          <div class="contact-hero">
+            <h1>Let's Transform Your TSF Monitoring</h1>
+            <p>
+              Ready to prove value in 12 weeks? Share your details and we'll schedule a working session to define your pilot KPIs and success criteria.
+            </p>
+          </div>
+
+          <div class="contact-container">
+            <div class="contact-form-section">
+              <h2>Start Your Pilot</h2>
+              <form id="contact-form" action="https://formsubmit.co/mike.ochs@stellat.us" method="POST" novalidate>
+                <!-- FormSubmit configuration -->
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="TSF Monitoring Pilot Inquiry - Stellatus" />
+                <input type="hidden" name="_template" value="table" />
+
+                <div class="form-row">
+                  <label for="name">Name *</label>
+                  <input id="name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+
+                <div class="form-row">
+                  <label for="company">Company *</label>
+                  <input id="company" name="company" type="text" placeholder="Mining company name" required />
+                </div>
+
+                <div class="form-row">
+                  <label for="email">Work Email *</label>
+                  <input id="email" name="email" type="email" placeholder="name@company.com" required />
+                </div>
+
+                <div class="form-row">
+                  <label for="role">Role *</label>
+                  <input id="role" name="role" type="text" placeholder="e.g., EOR, Technical Services Manager" required />
+                </div>
+
+                <div class="form-row">
+                  <label for="tsf-count">How many TSFs? (Optional)</label>
+                  <select id="tsf-count" name="tsf-count">
+                    <option value="">Select...</option>
+                    <option value="1">1 TSF</option>
+                    <option value="2-5">2-5 TSFs</option>
+                    <option value="6-10">6-10 TSFs</option>
+                    <option value="10+">More than 10 TSFs</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" placeholder="Tell us about your TSF monitoring challenges and goals" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <div class="info-card">
+                <h3>Book a Working Session</h3>
+                <p>
+                  Schedule a 60-minute deep dive to explore your specific TSF monitoring needs. We'll discuss your current data sources, define pilot KPIs, and map out a 12-week success plan.
+                </p>
+                <a href="https://calendly.com/stellatus/60min" target="_blank" rel="noopener" class="btn btn-primary">
+                  Book 60-min session
+                </a>
+              </div>
+
+              <div class="info-card">
+                <h3>Request the Pilot SOW</h3>
+                <p>
+                  Get our standard Statement of Work template for the 12-week pilot program. Includes deliverables, timelines, KPIs, and commercial terms.
+                </p>
+                <a href="mailto:mike.ochs@stellat.us?subject=Request%20for%20TSF%20Pilot%20SOW" class="btn btn-secondary">
+                  Request SOW Template
+                </a>
+              </div>
+
+              <div class="quick-links">
+                <h3>Quick Actions</h3>
+                <ul>
+                  <li>📧 Direct email: <a href="mailto:mike.ochs@stellat.us">mike.ochs@stellat.us</a></li>
+                  <li>📄 <a href="#download-onepager" onclick="openEmailCapture(event)">Download 1-pager</a></li>
+                  <li>🔬 <a href="evidence.html">Review evidence</a></li>
+                  <li>🚀 <a href="/">Back to home</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="container footer-inner">
+        <div class="footer-content">
+          <div class="footer-nav">
+            <a href="evidence.html">Evidence</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="labs.html" class="nav-link-light">Labs</a>
+          </div>
+          <p class="footer-copyright">© 2025 Stellatus LLC. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
