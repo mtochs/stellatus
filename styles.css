@@ -722,7 +722,9 @@ p { font-size: 16px; }
 }
 .security-items h3 {
   margin: 0 0 20px;
-  font-size: 1.5em;
+  font-size: clamp(20px, 2.5vw, 28px);
+  text-align: center;
+  text-shadow: 0 0 12px rgba(234, 205, 111, 0.4);
 }
 .security-list {
   list-style: none;
