@@ -1,2 +1,17 @@
 # Windows reserved device names
 nul
+
+# Environment variables
+.env
+.env.local
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Vercel
+.vercel
+
+# OS
+.DS_Store
+Thumbs.db

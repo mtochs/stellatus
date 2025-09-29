@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="download-modal.css" />
   </head>
   <body>
     <header class="site-header" role="banner">
@@ -58,7 +59,7 @@
           </p>
           <div class="value-ctas">
             <a href="contact.html" class="btn btn-primary">Book a 60‑min working session</a>
-            <a href="#download-onepager" class="btn btn-secondary" onclick="openEmailCapture(event)">Download 1‑pager</a>
+            <a href="#" class="btn btn-secondary" onclick="openEmailCapture(event); return false;">Download 1‑pager</a>
           </div>
         </div>
       </section>
@@ -228,5 +229,6 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <script src="download-modal.js"></script>
   </body>
 </html>

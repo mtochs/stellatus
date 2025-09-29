@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="download-modal.css" />
     <style>
       .contact-page { 
         /* Padding handled by global styles.css */
@@ -268,7 +269,7 @@
                 <h3>Quick Actions</h3>
                 <ul>
                   <li>📧 Direct email: <a href="mailto:mike.ochs@stellat.us">mike.ochs@stellat.us</a></li>
-                  <li>📄 <a href="#download-onepager" onclick="openEmailCapture(event)">Download 1-pager</a></li>
+                  <li>📄 <a href="#" onclick="openEmailCapture(event); return false;">Download 1-pager</a></li>
                   <li>🔬 <a href="evidence.html">Review evidence</a></li>
                   <li>🚀 <a href="/">Back to home</a></li>
                 </ul>
@@ -294,5 +295,6 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <script src="download-modal.js"></script>
   </body>
 </html>
