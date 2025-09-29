@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOR Draft in 48 Hours | Stellatus TSF Monitoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: letter;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: white;
+        }
+        
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            padding: 0.35in 0.45in;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+        
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.15in;
+            padding-bottom: 0.08in;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            height: 38px;
+            width: auto;
+        }
+        
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .tagline {
+            font-size: 10px;
+            color: #666;
+            text-align: right;
+            font-style: italic;
+            max-width: 240px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 0.18in;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Value Props Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.12in;
+            margin-bottom: 0.18in;
+        }
+        
+        .value-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .value-icon {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .value-card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .value-card p {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        /* Process Timeline */
+        .process-section {
+            margin-bottom: 0.18in;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 8px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, #D4AF37, #B8941F);
+            z-index: 0;
+        }
+        
+        .timeline-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: #D4AF37;
+            margin: 0 auto 6px;
+        }
+
+        .timeline-step h4 {
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .timeline-step p {
+            font-size: 9px;
+            color: #666;
+            line-height: 1.2;
+        }
+        
+        /* Pilot Program */
+        .pilot-section {
+            background: linear-gradient(135deg, #FFF9E6, #FFF);
+            border: 1.5px solid #D4AF37;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 0.18in;
+        }
+
+        .pilot-header {
+            text-align: center;
+            margin-bottom: 9px;
+        }
+
+        .pilot-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .guarantee {
+            color: #B8941F;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .pilot-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        
+        .pilot-timeline h4,
+        .pilot-kpis h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1a1a1a;
+        }
+
+        .pilot-timeline ul,
+        .pilot-kpis ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pilot-timeline li,
+        .pilot-kpis li {
+            font-size: 11px;
+            margin-bottom: 5px;
+            padding-left: 13px;
+            position: relative;
+        }
+        
+        .pilot-timeline li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .pilot-kpis li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        /* Evidence Strip */
+        .evidence-strip {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 13px;
+            margin-bottom: 0.15in;
+        }
+
+        .evidence-items {
+            display: flex;
+            justify-content: space-around;
+            gap: 12px;
+        }
+
+        .evidence-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .evidence-item strong {
+            display: block;
+            font-size: 12px;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .evidence-item span {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.25;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .cta-headline {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .cta-subtitle {
+            font-size: 13.5px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .cta-button {
+            background: #D4AF37;
+            color: #1a1a1a;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 12.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            border: 1.5px solid #D4AF37;
+            color: #D4AF37;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 0.14in;
+            padding-top: 11px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9.5px;
+            color: #666;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 14px;
+        }
+        
+        /* Page 2 specific styles */
+        .roi-section {
+            background: linear-gradient(135deg, #f0f8ff, #fff);
+            border: 1px solid #4A90E2;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 0.15in;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 9px;
+        }
+
+        .roi-item {
+            text-align: center;
+        }
+
+        .roi-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4A90E2;
+            display: block;
+        }
+
+        .roi-label {
+            font-size: 9.5px;
+            color: #666;
+        }
+        
+        .technical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 0.15in;
+        }
+        
+        .tech-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 11px;
+        }
+
+        .tech-box h3 {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 7px;
+            border-bottom: 1.5px solid #D4AF37;
+            padding-bottom: 4px;
+        }
+
+        .tech-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-box li {
+            font-size: 9.5px;
+            margin-bottom: 4px;
+            padding-left: 11px;
+            position: relative;
+            color: #333;
+            line-height: 1.25;
+        }
+        
+        .tech-box li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 0.15in;
+        }
+        
+        .comparison-table th {
+            background: #1a1a1a;
+            color: white;
+            padding: 7px;
+            text-align: left;
+            font-size: 10.5px;
+        }
+
+        .comparison-table td {
+            padding: 5px 7px;
+            border: 1px solid #e0e0e0;
+            font-size: 9.5px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .page {
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <img src="images/stellatus-logo-star-circuit.png" alt="Stellatus" class="logo-img">
+                <div class="company-name">Stellatus</div>
+            </div>
+            <div class="tagline">Your TSF monthly report, ready in 48 hours from existing data</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>EOR Draft in 48 Hours</h1>
+            <div class="subtitle">Transform weeks of manual reporting into 2 days of automated precision</div>
+            <div class="hero-badges">
+                <span class="badge">No New CapEx</span>
+                <span class="badge">Full Provenance</span>
+                <span class="badge">Software-First</span>
+            </div>
+        </div>
+
+        <!-- Value Props -->
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h3>≤48h Turnaround</h3>
+                <p>From survey drop to complete draft with figures & tables</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔍</div>
+                <h3>Auditable Trail</h3>
+                <p>Click any figure to see source files, QC rules & transforms</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>Your Data, Secure</h3>
+                <p>Runs in your tenant or isolated enclave, read-only access</p>
+            </div>
+        </div>
+
+        <!-- Process Timeline -->
+        <div class="process-section">
+            <h2 class="section-title">Three Clicks to Your Monthly Draft</h2>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h4>Ingest & QC</h4>
+                    <p>Auto-align units, timebases<br>Flag gaps & drift</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h4>Change Cards</h4>
+                    <p>Surface movement, pressure<br>Volume deltas with TARPs</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <h4>Generate Draft</h4>
+                    <p>Word/PDF in your template<br>Figures, CSV, provenance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pilot Program -->
+        <div class="pilot-section">
+            <div class="pilot-header">
+                <h2>30-Day Pilot Program</h2>
+                <div class="guarantee">Binary acceptance: Pass/Fail with money-back guarantee</div>
+            </div>
+            <div class="pilot-content">
+                <div class="pilot-timeline">
+                    <h4>Timeline:</h4>
+                    <ul>
+                        <li><strong>Week 0:</strong> Shadow Draft in 7 days</li>
+                        <li><strong>Days 8-30:</strong> Two live Draft-in-48</li>
+                        <li><strong>Success:</strong> Fee credits to Year 1</li>
+                    </ul>
+                </div>
+                <div class="pilot-kpis">
+                    <h4>Success Criteria:</h4>
+                    <ul>
+                        <li>Two ≤48h drafts delivered</li>
+                        <li>≥2 data feeds integrated live</li>
+                        <li>≤10 EOR edits to finalize</li>
+                        <li>≥1 novel actionable finding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evidence Strip -->
+        <div class="evidence-strip">
+            <h3 class="section-title" style="margin-bottom: 10px; font-size: 14px;">Critical Incidents: Why Speed Matters</h3>
+            <div class="evidence-items">
+                <div class="evidence-item">
+                    <strong>Brumadinho 2019</strong>
+                    <span>Weeks of precursory deformation in satellite—detected too late</span>
+                </div>
+                <div class="evidence-item">
+                    <strong>Cadia 2018</strong>
+                    <span>Months of acceleration before failure—monitoring gap</span>
+                </div>
+                <div class="evidence-item">
+                    <strong>Your TSF</strong>
+                    <span>Don't wait 3+ weeks for insights that matter today</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-headline">Choose a site. Drop a sample. Let's go.</div>
+            <div class="cta-subtitle">Start with a Shadow Draft—see your data transformed in 7 days</div>
+            <div class="cta-buttons">
+                <a href="mailto:mike.ochs@stellat.us?subject=Shadow Draft Request" class="cta-button">Get Shadow Draft</a>
+                <a href="https://stellat.us/contact" class="cta-button cta-secondary">Book 60-min Session</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>© 2025 Stellatus LLC. Decision-support analytics for tailings management.</div>
+            <div class="contact-info">
+                <span>stellat.us</span>
+                <span>mike.ochs@stellat.us</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <img src="images/stellatus-logo-star-circuit.png" alt="Stellatus" class="logo-img">
+                <div class="company-name">Stellatus</div>
+            </div>
+            <div class="tagline">Additional Technical Details & ROI Information</div>
+        </div>
+
+        <!-- ROI Calculator Section -->
+        <div class="roi-section">
+            <h2 class="section-title">Quantified ROI: Make the Business Case</h2>
+            <div class="roi-grid">
+                <div class="roi-item">
+                    <span class="roi-number">75-90%</span>
+                    <span class="roi-label">Cycle Time Reduction</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-number">30-60%</span>
+                    <span class="roi-label">Labor Hour Savings</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-number">$0 CapEx</span>
+                    <span class="roi-label">Day 1 Investment</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Details Grid -->
+        <div class="technical-grid">
+            <div class="tech-box">
+                <h3>Data We Ingest (No Reformatting)</h3>
+                <ul>
+                    <li>Piezometer time series (VWP, standpipe)</li>
+                    <li>GNSS/RTK monument positions</li>
+                    <li>Drone orthos, DSM, point clouds</li>
+                    <li>Bathymetry survey points</li>
+                    <li>InSAR feeds (optional Q2)</li>
+                    <li>Weather station data</li>
+                    <li>Seepage flow rates</li>
+                </ul>
+            </div>
+            <div class="tech-box">
+                <h3>What Makes Us Different</h3>
+                <ul>
+                    <li>EOR-ready output in their template</li>
+                    <li>Provenance chain for every number</li>
+                    <li>No vendor lock-in on sensors</li>
+                    <li>Read-only collectors (no control risk)</li>
+                    <li>Platform learns from your edits</li>
+                    <li>Multi-TSF scale discounts</li>
+                    <li>Weekly fusion briefs (optional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Traditional</th>
+                    <th>With Stellatus</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Draft Time</strong></td>
+                    <td>8-20 days</td>
+                    <td>≤48 hours</td>
+                    <td>10x faster</td>
+                </tr>
+                <tr>
+                    <td><strong>Manual Work</strong></td>
+                    <td>40-80 hrs/month</td>
+                    <td>2-4 hrs review</td>
+                    <td>95% reduction</td>
+                </tr>
+                <tr>
+                    <td><strong>Contractor</strong></td>
+                    <td>Critical blocker</td>
+                    <td>Removed</td>
+                    <td>Zero backlog</td>
+                </tr>
+                <tr>
+                    <td><strong>Anomaly Detection</strong></td>
+                    <td>Visual inspection</td>
+                    <td>Automated</td>
+                    <td>24/7 coverage</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Deployment & Expansion -->
+        <div class="technical-grid">
+            <div class="tech-box">
+                <h3>Deployment Options</h3>
+                <ul>
+                    <li><strong>Your Cloud:</strong> Full control, your IAM</li>
+                    <li><strong>Ring-Fenced:</strong> Isolated, SOC2 Type II</li>
+                    <li><strong>Hybrid:</strong> Edge + cloud analytics</li>
+                    <li><strong>Air-Gapped:</strong> On-premise (Q3)</li>
+                </ul>
+            </div>
+            <div class="tech-box">
+                <h3>Expansion Roadmap</h3>
+                <ul>
+                    <li><strong>Q2:</strong> Multibeam bathy, InSAR</li>
+                    <li><strong>Q2:</strong> Weekly fusion briefs</li>
+                    <li><strong>Q3:</strong> Fiber-optic pilots</li>
+                    <li><strong>Q3:</strong> TARP automation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Common Objections -->
+        <div class="tech-box" style="margin-bottom: 0.12in;">
+            <h3>Addressing Common Concerns</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                    <strong style="font-size: 10.5px; color: #333;">Q: "Our EOR won't trust third-party analytics"</strong>
+                    <p style="font-size: 9.5px; color: #666; margin-top: 3px; line-height: 1.3;">A: This is their draft in their template—we just accelerate it.</p>
+                </div>
+                <div>
+                    <strong style="font-size: 10.5px; color: #333;">Q: "We already have monitoring software"</strong>
+                    <p style="font-size: 9.5px; color: #666; margin-top: 3px; line-height: 1.3;">A: Great—we integrate with it. Our value is the 48h draft.</p>
+                </div>
+                <div>
+                    <strong style="font-size: 10.5px; color: #333;">Q: "What about liability?"</strong>
+                    <p style="font-size: 9.5px; color: #666; margin-top: 3px; line-height: 1.3;">A: Decision-support only. Contracts cap exposure.</p>
+                </div>
+                <div>
+                    <strong style="font-size: 10.5px; color: #333;">Q: "How do you handle bad data?"</strong>
+                    <p style="font-size: 9.5px; color: #666; margin-top: 3px; line-height: 1.3;">A: Auto-QC flags gaps, drift, outliers. You review.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="cta-section">
+            <div class="cta-headline">Ready to compress months into hours?</div>
+            <div class="cta-subtitle">Send us last month's data bundle. Get your Shadow Draft in 7 days.</div>
+            <div class="cta-buttons">
+                <a href="mailto:mike.ochs@stellat.us?subject=Shadow Draft Request" class="cta-button">Request Shadow Draft</a>
+                <a href="https://stellat.us/contact" class="cta-button cta-secondary">Schedule Technical Call</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>Stellatus: Where mining data becomes actionable intelligence.</div>
+            <div class="contact-info">
+                <span>stellat.us</span>
+                <span>mike.ochs@stellat.us</span>
+                <span>Decision-support only</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
