@@ -5,7 +5,9 @@
       "Bash(powershell:*)",
       "Bash(where:*)",
       "Bash(test:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(vercel dev:*)",
+      "Bash(vercel:*)"
     ],
     "deny": [],
     "ask": []
