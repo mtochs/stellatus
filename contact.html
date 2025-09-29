@@ -191,11 +191,14 @@
           <div class="contact-container">
             <div class="contact-form-section">
               <h2>Start Your Shadow Draft</h2>
-              <form id="contact-form" action="https://formsubmit.co/mike.ochs@stellat.us" method="POST" novalidate>
-                <!-- FormSubmit configuration -->
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_subject" value="TSF Monitoring Pilot Inquiry - Stellatus" />
-                <input type="hidden" name="_template" value="table" />
+              <div id="contact-success" style="display: none; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 20px; margin-bottom: 20px; color: #155724;">
+                <h3 style="margin-top: 0;">✓ Message Sent!</h3>
+                <p style="margin-bottom: 0;">Thank you for your inquiry! We'll be in touch soon.</p>
+              </div>
+              <div id="contact-error" style="display: none; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 20px; margin-bottom: 20px; color: #721c24;">
+                <p style="margin: 0;"></p>
+              </div>
+              <form id="contact-form" novalidate>
 
                 <div class="form-row">
                   <label for="name">Name *</label>
@@ -240,8 +243,63 @@
                   </label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send Inquiry</button>
               </form>
+
+              <script>
+              (function() {
+                const form = document.getElementById('contact-form');
+                const submitBtn = document.getElementById('contact-submit-btn');
+                const successDiv = document.getElementById('contact-success');
+                const errorDiv = document.getElementById('contact-error');
+
+                form.addEventListener('submit', async function(e) {
+                  e.preventDefault();
+
+                  // Disable button
+                  submitBtn.disabled = true;
+                  submitBtn.textContent = 'Sending...';
+
+                  // Hide previous messages
+                  successDiv.style.display = 'none';
+                  errorDiv.style.display = 'none';
+
+                  try {
+                    const formData = new FormData(form);
+                    const formObject = Object.fromEntries(formData.entries());
+
+                    const response = await fetch('/api/submit-contact', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(formObject)
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                      // Show success message
+                      successDiv.style.display = 'block';
+                      form.reset();
+                      
+                      // Scroll to success message
+                      successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                      throw new Error(data.error || 'Submission failed');
+                    }
+                  } catch (error) {
+                    console.error('Error:', error);
+                    errorDiv.querySelector('p').textContent = error.message || 'There was an error sending your message. Please try again or email us directly at mike.ochs@stellat.us';
+                    errorDiv.style.display = 'block';
+                    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Inquiry';
+                  }
+                });
+              })();
+              </script>
             </div>
 
             <div class="contact-info">
