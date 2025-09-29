@@ -44,8 +44,8 @@
         <div id="downloadModalSuccess" class="download-modal-success" style="display: none;">
           <div class="success-icon">✓</div>
           <h3>Thank You!</h3>
-          <p>Your download will begin automatically.</p>
-          <p style="margin-top: 12px;">If it doesn't start, <a href="Stellatus-TSF-Monitoring-Overview.pdf" download>click here</a>.</p>
+          <p>Your download is starting...</p>
+          <p style="margin-top: 12px; font-size: 14px; color: #888;">Check your downloads folder for the Stellatus TSF Monitoring Overview.</p>
         </div>
 
         <p class="download-modal-privacy">
@@ -148,20 +148,18 @@
         form.style.display = 'none';
         successDiv.style.display = 'block';
 
-        // Trigger download
-        setTimeout(() => {
-          const link = document.createElement('a');
-          link.href = 'Stellatus-TSF-Monitoring-Overview.pdf';
-          link.download = 'Stellatus-TSF-Monitoring-Overview.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+        // Trigger download immediately
+        const link = document.createElement('a');
+        link.href = 'Stellatus-TSF-Monitoring-Overview.pdf';
+        link.download = 'Stellatus-TSF-Monitoring-Overview.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-          // Close modal after 3 seconds
-          setTimeout(() => {
-            closeDownloadModal();
-          }, 3000);
-        }, 500);
+        // Close modal after 2.5 seconds
+        setTimeout(() => {
+          closeDownloadModal();
+        }, 2500);
       } else {
         throw new Error(data.error || 'Submission failed');
       }
