@@ -63,15 +63,8 @@ This notification was sent automatically when someone downloaded the TSF Monitor
       `
     };
 
-    // Send email using Vercel's built-in email or your preferred service
-    // Option 1: Use SendGrid
-    if (process.env.SENDGRID_API_KEY) {
-      const sgMail = require('@sendgrid/mail');
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-      await sgMail.send(emailContent);
-    }
-    // Option 2: Use Resend (recommended for Vercel)
-    else if (process.env.RESEND_API_KEY) {
+    // Send email using Resend API
+    if (process.env.RESEND_API_KEY) {
       const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -79,45 +72,25 @@ This notification was sent automatically when someone downloaded the TSF Monitor
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'onboarding@resend.dev',
+          from: 'Stellatus Website <downloads@stellat.us>',
           to: ['mike.ochs@stellat.us'],
           subject: emailContent.subject,
-          html: emailContent.html
+          html: emailContent.html,
+          text: emailContent.text
         })
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Resend error:', errorData);
-        throw new Error('Failed to send email via Resend');
-      }
-    }
-    // Option 3: Use nodemailer with SMTP
-    else if (process.env.SMTP_HOST) {
-      const nodemailer = require('nodemailer');
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT || 587,
-        secure: process.env.SMTP_SECURE === 'true',
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
-        }
-      });
+      const responseData = await response.json();
 
-      await transporter.sendMail({
-        from: emailContent.from,
-        to: emailContent.to,
-        subject: emailContent.subject,
-        text: emailContent.text,
-        html: emailContent.html
-      });
-    }
-    else {
-      console.error('No email service configured');
-      // Still return success to avoid exposing configuration issues
-      // but log the data for manual follow-up
-      console.log('Download request (email not sent):', { name, email, company, timestamp });
+      if (!response.ok) {
+        console.error('Resend API error:', responseData);
+        throw new Error(responseData.message || 'Failed to send email via Resend');
+      }
+
+      console.log('Email sent successfully via Resend:', responseData.id);
+    } else {
+      console.error('RESEND_API_KEY not configured');
+      throw new Error('Email service not configured');
     }
 
     // Return success response
