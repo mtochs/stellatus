@@ -1,334 +1,182 @@
-# Stellatus - TSF Monitoring Website
+# Stellatus Website
 
-Modern website for Stellatus, providing AI-powered tailings storage facility (TSF) monitoring solutions that deliver EOR-ready reports in 48 hours.
+Enterprise-grade TSF monitoring platform website and collateral system.
 
-## 🚀 Overview
+## 🚀 Recent Updates (2025-09-30)
 
-This is the main website for Stellatus LLC, featuring:
-- Responsive landing page with hero video background
-- Integrated PDF download modal with email capture
-- Evidence-based case studies page
-- About, Labs, and Contact pages
-- Vercel serverless backend for email notifications
+### Critical Copy & Positioning Updates
+- **Harmonized Metrics**: Standardized to "8–20 days → ≤48h" and "40–70% reduction"
+- **SaaS-First Architecture**: Default deployment is now Stellatus-managed private SaaS
+- **48h Clock Clarification**: Always specified as "from final survey drop"
+- **Professional Tone**: Removed disaster references, softened incident framing
+- **Banned Phrases Removed**: No SOC2 claims, absolutes, or unverifiable commitments
 
-**Live Site:** [stellat.us](https://stellat.us)
+### New Features
+- **TSF Pitch Deck**: Hidden pitch page at `/tsf/` with AI-generated images
+- **Collateral System**: Automated PDF generation for NGM and website collateral
+- **Source Markdown**: New `/collateral/src/` directory for maintainable content
 
 ## 📁 Project Structure
 
 ```
 stellatus/
-├── index.html                 # Main landing page
-├── evidence.html              # Case studies and evidence page
-├── about.html                 # Company information
-├── labs.html                  # Labs/experimental features
-├── contact.html               # Contact form
-├── styles.css                 # Global styles
-├── script.js                  # Main JavaScript
-├── download-modal.js          # PDF download modal functionality
-├── download-modal.css         # Modal styling
-├── tsf-onepager.html         # One-pager HTML version (legacy)
-├── Stellatus-TSF-Monitoring-Overview.pdf  # Original marketing PDF (legacy)
-├── collateral/                # Marketing collateral system
-│   ├── README.md              # Collateral documentation
-│   ├── Stellatus-EOR-Draft-in-48-Overview.pdf  # New 2-page public download
-│   ├── ngm/                   # NGM-specific one-pager
-│   │   ├── ngm-one-pager.html
-│   │   ├── ngm-one-pager_letter.pdf (1 page)
-│   │   └── ngm-one-pager_a4.pdf (1 page)
-│   ├── 2pg/                   # Generic website two-pager
-│   │   ├── website-two-pager.html
-│   │   ├── website-two-pager_letter.pdf (2 pages)
-│   │   └── website-two-pager_a4.pdf (2 pages)
-│   └── assets/                # Icons and styles
+├── index.html              # Main homepage
+├── contact.html            # Contact form with Resend integration
+├── evidence.html           # Evidence and case studies
+├── about.html              # About page
+├── labs.html               # Labs experiments
+├── tsf/                    # TSF pitch deck (hidden)
+│   ├── index.html
+│   └── assets/
+│       ├── css/
+│       ├── js/
+│       └── images/        # AI-generated with Replicate MCP
+├── collateral/             # Marketing materials
+│   ├── src/               # Source markdown files
+│   │   ├── ngm-one-pager.md
+│   │   └── website-two-pager.md
+│   ├── ngm/               # NGM-specific collateral
+│   ├── 2pg/               # Website two-pager
+│   └── assets/            # Icons and styles
+├── api/                    # Serverless functions
+│   ├── submit-contact.js
+│   └── submit-download.js
 ├── scripts/
-│   └── generate-pdfs.mjs     # Automated PDF generation
-├── api/
-│   └── submit-download.js    # Serverless function for email notifications
-├── images/                    # Image assets
-├── video/                     # Background videos
-│   ├── hero-video-tsf.mp4           # Original TSF video (13.35 MB)
-│   ├── hero-video-tsf-compressed.mp4 # Compressed version (1.66 MB)
-│   └── hero-video-tsf.webm          # WebM format (2.21 MB)
-├── vercel.json               # Vercel deployment config
-└── package.json              # Node.js dependencies
+│   └── generate-pdfs.mjs  # PDF generation script
+└── images/                 # Website images
 ```
 
-## 🎯 Key Features
-
-### PDF Download Modal
-- Modal popup triggered from "Download 1-pager" button
-- Captures: Name, Email, Company (optional)
-- Sends notification email to mike.ochs@stellat.us via Resend API
-- Automatically downloads new 2-page PDF after submission
-- Mobile-responsive design
-
-### Marketing Collateral System
-- Automated PDF generation using Puppeteer
-- NGM-specific one-pager (1 page)
-- Generic website two-pager (2 pages)
-- Both Letter and A4 sizes
-- No metadata headers/footers (clean, professional)
-- Automatic page count validation
-- Run `npm run pdfs` to regenerate all collateral
-
-### Hero Video Background
-- Compressed MP4 and WebM formats for optimal performance
-- Autoplay, loop, muted for best user experience
-- Fallback poster image
-- 87% file size reduction from original
-
-### Serverless Backend
-- Vercel Functions handle form submissions
-- Resend API integration for email notifications
-- Error handling and validation
-- Automatic timestamp inclusion
-
-## 🛠️ Technology Stack
-
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Backend**: Node.js (Vercel Serverless Functions)
-- **Email Service**: Resend API
-- **Hosting**: Vercel
-- **Video Processing**: FFmpeg
-
-## 📦 Installation
+## 🛠 Setup
 
 ### Prerequisites
 - Node.js 18+
-- Git
-- Vercel account
-- Resend account (for email notifications)
+- npm or yarn
+- Vercel CLI (`npm i -g vercel`)
 
-### Local Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/mtochs/stellatus.git
-cd stellatus
-```
-
-2. Install dependencies:
+### Installation
 ```bash
 npm install
 ```
 
-3. Generate marketing PDFs (optional):
+### Environment Variables
+Create `.env` file (see `.env.example`):
+```
+RESEND_API_KEY=your_resend_api_key_here
+```
+
+In Vercel, add the same environment variable in project settings.
+
+## 📄 PDF Generation
+
+Generate all collateral PDFs:
 ```bash
 npm run pdfs
 ```
-This generates all collateral PDFs in the `/collateral` folder.
 
-3. Set up environment variables:
-   - Create `.env` file (see `.env.example`)
-   - Add your Resend API key
+This will:
+- Generate NGM one-pager (Letter & A4) - must be 1 page
+- Generate website two-pager (Letter & A4) - must be 2 pages
+- Validate page counts
+- Copy public download to `/collateral/`
 
-4. Run locally with Vercel CLI:
-```bash
-npm install -g vercel
-vercel dev
-```
-
-5. Visit: `http://localhost:3000`
+### Collateral Source Files
+Edit markdown files in `/collateral/src/` then regenerate:
+1. `ngm-one-pager.md` - NGM-specific content
+2. `website-two-pager.md` - Generic website collateral
 
 ## 🚀 Deployment
 
-### Deploy to Vercel
-
-1. Install Vercel CLI:
+### Development
 ```bash
-npm install -g vercel
+# Run local development server
+vercel dev
 ```
 
-2. Login to Vercel:
+### Production
 ```bash
-vercel login
-```
+# Commit changes
+git add .
+git commit -m "Your message"
+git push origin master
 
-3. Deploy:
-```bash
+# Deploy to production
 vercel --prod
 ```
 
-4. Set environment variable in Vercel:
-```bash
-vercel env add RESEND_API_KEY
-```
-Or add via [Vercel Dashboard](https://vercel.com/dashboard) → Settings → Environment Variables
+Live at: https://stellat.us
 
-### Environment Variables
+## 🎨 Brand Guidelines
 
-Required in Vercel:
-- `RESEND_API_KEY` - Your Resend API key from [resend.com](https://resend.com)
+- **Primary**: `#0F1115` (near-black)
+- **Accent**: `#E5B202` (gold)
+- **Neutral**: `#F5F7FA` (light gray)
+- **Success**: `#1FAD66`
+- **Font**: Inter, Segoe UI, Helvetica, Arial
 
-## 🔧 Configuration
+## � Email Integration
 
-### Email Notifications
+Using [Resend](https://resend.com) for:
+- Contact form submissions
+- Download tracking
+- Lead capture
 
-The download form sends notifications to `mike.ochs@stellat.us`. To change:
+See [RESEND-SETUP-GUIDE.md](./RESEND-SETUP-GUIDE.md) for configuration.
 
-1. Edit `api/submit-download.js`
-2. Update the `to` field in the email configuration
-3. Ensure sender domain is verified in Resend
+## 🔧 JavaScript Tools
 
-### Resend Setup
+### PDF Generation (`scripts/generate-pdfs.mjs`)
+- Uses Puppeteer for HTML to PDF conversion
+- Validates page counts
+- Generates Letter and A4 formats
 
-1. Sign up at [resend.com](https://resend.com)
-2. Add and verify your domain `stellat.us`
-3. Create API key
-4. Add sender email: `downloads@stellat.us`
-5. Add API key to Vercel environment variables
+### Download Modal (`download-modal.js`)
+- Email capture before PDF download
+- Integrates with Resend API
 
-### Video Assets
+### TSF Animations (`tsf/assets/js/tsf.js`)
+- Scroll reveal animations
+- Progress bar
+- Intersection Observer effects
 
-Hero videos are in `/video` folder:
-- **Original**: `hero-video-tsf.mp4` (13.35 MB - not used)
-- **Compressed MP4**: `hero-video-tsf-compressed.mp4` (1.66 MB - used)
-- **WebM**: `hero-video-tsf.webm` (2.21 MB - used for modern browsers)
+## � Important Copy Guidelines
 
-To add new videos, compress them first:
-```bash
-# MP4 compression
-ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -movflags +faststart output-compressed.mp4
+### ✅ Always Use
+- "8–20 days → ≤48h" for cycle time
+- "40–70% internal hours reduction"
+- "from final survey drop" for 48h timing
+- "Stellatus-managed private SaaS" as default
 
-# WebM conversion
-ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 35 -b:v 0 -c:a libopus -b:a 96k output.webm
-```
+### ❌ Never Use
+- SOC2/SOC 2 claims (we don't have it)
+- "Zero backlog" (use "removes from critical path")
+- "24/7 coverage" (use "continuous evaluation")
+- "95% reduction" (use "40–70% reduction")
+- Disaster references (Brumadinho, Cadia)
 
-## 📧 Email Notification Format
+## 🖼 Image Generation
 
-When someone downloads the PDF, you receive:
+Using Replicate MCP with Bytedance's seedream-4 model:
+- Photorealistic enterprise aesthetics
+- No text overlays
+- Professional mining/industrial themes
 
-```
-Subject: New TSF One-Pager Download Request
+## 📚 Documentation
 
-Name: John Smith
-Email: john.smith@company.com
-Company: Acme Mining Co.
-Timestamp: Sunday, September 29, 2025 at 3:30:00 PM EDT
-```
-
-## 🎨 Customization
-
-### Colors
-Main brand color: `#D4AF37` (Stellatus gold)
-
-Update in `styles.css` and `download-modal.css`
-
-### Content
-- Landing page: `index.html`
-- Evidence page: `evidence.html`
-- Contact form: `contact.html`
-- About page: `about.html`
-
-## 🔍 Troubleshooting
-
-### Email not sending?
-1. Check Vercel logs: `vercel logs`
-2. Verify `RESEND_API_KEY` is set correctly
-3. Ensure domain is verified in Resend
-4. Check sender email is added in Resend dashboard
-5. Look for errors in browser console (F12)
-
-### Video not playing?
-1. Check video file paths in `index.html`
-2. Verify video files exist in `/video` folder
-3. Test with different browsers
-4. Check browser console for errors
-
-### Form not submitting?
-1. Open browser console (F12)
-2. Check Network tab for API errors
-3. Verify API endpoint: `/api/submit-download`
-4. Test locally with `vercel dev`
-
-## 📊 Performance
-
-- Lighthouse Score: 95+ (Performance)
-- Video file size: 1.66 MB (compressed MP4)
-- First Contentful Paint: < 1.5s
-- Time to Interactive: < 3.5s
-
-## 🔐 Security
-
-- No sensitive data stored in repository
-- Environment variables for API keys
-- HTTPS enforced via Vercel
-- CORS headers configured
-- Input validation on server side
-
-## 📱 Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 License
-
-Proprietary - © 2025 Stellatus LLC. All Rights Reserved.
+- `.cline_rules` - Project rules and AI assistant guidelines
+- `README.md` - This file
+- `RESEND-SETUP-GUIDE.md` - Email setup instructions
+- `collateral/README.md` - Collateral generation guide
 
 ## 🤝 Contact
 
-- Email: mike.ochs@stellat.us
-- Website: [stellat.us](https://stellat.us)
+- **Email**: mike.ochs@stellat.us
+- **Website**: https://stellat.us
+- **Company**: Stellatus LLC
 
-## 🔗 Useful Links
+## 📄 License
 
-- [Vercel Dashboard](https://vercel.com/dashboard)
-- [Resend Dashboard](https://resend.com/dashboard)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Resend Documentation](https://resend.com/docs)
-
-## 📈 Analytics
-
-To add Google Analytics:
-1. Create GA4 property
-2. Add tracking code to `<head>` in HTML files
-3. Configure goals for PDF downloads
-
-## ✨ Recent Updates
-
-- ✅ New automated PDF generation system (Puppeteer-based)
-- ✅ NGM-specific one-pager (1 page, Letter & A4)
-- ✅ Website two-pager (2 pages, Letter & A4)
-- ✅ Clean PDFs with no metadata headers/footers
-- ✅ Automatic page count validation
-- ✅ Compressed hero video (87% size reduction)
-- ✅ Added WebM format for better browser support
-- ✅ Fixed Resend API integration
-
-## 📄 Marketing Collateral
-
-The `/collateral` folder contains all marketing PDFs with an automated generation system:
-
-### Quick Commands
-```bash
-# Regenerate all PDFs
-npm run pdfs
-
-# View detailed documentation
-cat collateral/README.md
-```
-
-### What's Included
-- **NGM One-Pager**: Fits on exactly 1 page (Letter & A4)
-- **Website Two-Pager**: Fits on exactly 2 pages (Letter & A4)
-- **Automated Validation**: Script verifies page counts and fails if incorrect
-- **No Metadata**: Clean, professional PDFs without print headers/footers
-
-### Editing Content
-1. Update HTML files in `collateral/ngm/` or `collateral/2pg/`
-2. Modify CSS in `collateral/assets/styles/`
-3. Run `npm run pdfs` to regenerate
-4. Script automatically validates page counts
-
-See `collateral/README.md` for full documentation on:
-- Brand guidelines
-- Content guidelines
-- Editing workflows
-- Troubleshooting
+© 2025 Stellatus LLC. All Rights Reserved.
 
 ---
 
-**Need help?** Contact mike.ochs@stellat.us or check Vercel logs with `vercel logs`
+*Last updated: 2025-09-30*

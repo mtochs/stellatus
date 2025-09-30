@@ -1,40 +1,144 @@
 # Stellatus Project Rules and Important Information
 
+## Critical Copy Guidelines (UPDATED 2025-09-30)
+
+### Harmonized Metrics
+- **ALWAYS use**: "8–20 days → ≤48h" for cycle time reduction
+- **ALWAYS use**: "40–70% internal hours reduction"
+- **NEVER use absolutes** like "95% reduction", "Zero backlog", "24/7 coverage"
+
+### Architecture Positioning
+- **Default deployment**: "Stellatus-managed private SaaS (ring-fenced enclave)"
+- **Pilot/exception**: "Your cloud tenant; expectation to migrate to private SaaS at subscription unless otherwise contracted"
+- **NEVER claim** SOC2/SOC 2 certification (we don't have it)
+- **Read-only collectors** and "no control-system access" always
+
+### 48h Clock Definition
+- **ALWAYS specify**: "from final survey drop" or "48h measured from final survey drop → draft delivered"
+- This clarification is critical for setting proper expectations
+
+### Banned Phrases
+- SOC2/SOC 2 (unless saying "SOC 2 program in progress" if true)
+- "Zero backlog" → use "removes contractor backlog from critical path"
+- "24/7 coverage" → use "continuous evaluation between cycles"
+- "95% reduction" → use "40–70% reduction"
+- "Air-Gapped (Q3)" → use "Air-gapped/on-prem: Available on request"
+- Avoid disaster references (Brumadinho, Cadia, etc.)
+
 ## Logo Usage
 - **ALWAYS use the official logo**: `/images/stellatus-logo-star-circuit.png`
 - Never create CSS shapes or placeholders for the logo
 - The logo should be used in all collateral, PDFs, and marketing materials
 
 ## Project Structure
-- **Collateral folder**: `/collateral/` contains all marketing materials
-- **PDF Generation**: Use `npm run pdfs` to generate all PDFs
-- **Website**: https://stellat.us
+
+### Main Site
+- `/index.html` - Main website homepage
+- `/contact.html` - Contact form with Resend integration
+- `/evidence.html` - Evidence and case studies
+- `/about.html` - About page
+- `/labs.html` - Labs experiments page
+- `/tsf/` - TSF pitch deck (hidden, not linked from main nav)
+
+### Collateral Structure
+```
+/collateral/
+├── src/                     # Source markdown files
+│   ├── ngm-one-pager.md
+│   └── website-two-pager.md
+├── ngm/                     # NGM-specific collateral
+│   ├── ngm-one-pager.html
+│   ├── ngm-one-pager_letter.pdf
+│   └── ngm-one-pager_a4.pdf
+├── 2pg/                     # Website two-pager
+│   ├── website-two-pager.html
+│   ├── website-two-pager_letter.pdf
+│   └── website-two-pager_a4.pdf
+├── assets/
+│   ├── icons/              # SVG icons for collateral
+│   └── styles/             # CSS for collateral
+└── Stellatus-EOR-Draft-in-48-Overview.pdf  # Public download
+```
+
+### TSF Pitch Deck
+```
+/tsf/
+├── index.html              # TSF pitch page (uses absolute paths!)
+└── assets/
+    ├── css/tsf.css        # TSF-specific styles
+    ├── js/tsf.js          # TSF animations
+    └── images/            # AI-generated TSF images
+```
+
+## JavaScript Tools & Scripts
+
+### PDF Generation (`scripts/generate-pdfs.mjs`)
+- **Purpose**: Generates PDFs from HTML collateral using Puppeteer
+- **Usage**: `npm run pdfs`
+- **Features**:
+  - Validates page counts (1 page for NGM, 2 pages for website)
+  - Generates both Letter and A4 formats
+  - Copies website two-pager to public download location
+  - Auto-fixes relative paths for PDF rendering
+
+### Download Modal (`download-modal.js`)
+- **Purpose**: Email capture before PDF download
+- **Features**:
+  - Modal overlay for email collection
+  - Integrates with Resend API
+  - Tracks downloads in backend
+
+### Resend API Integration (`api/submit-contact.js`, `api/submit-download.js`)
+- **Purpose**: Handle form submissions and email capture
+- **Environment**: Requires `RESEND_API_KEY` in Vercel
+- **Features**:
+  - Contact form submissions
+  - Download tracking with email capture
+
+### TSF Animations (`tsf/assets/js/tsf.js`)
+- **Purpose**: Scroll animations and reveal effects for TSF pitch deck
+- **Features**:
+  - Intersection Observer for reveal animations
+  - Progress bar on scroll
+  - Smooth scroll behavior
 
 ## Important Files to Update
 - **README.md**: Update after any structural changes to the project
 - **collateral/README.md**: Update after changes to collateral structure or generation process
+- **.cline_rules**: Update after any critical decisions or process changes
 
 ## Brand Guidelines
 - **Primary Color**: #0F1115 (near-black)
 - **Accent Color**: #E5B202 (gold)
 - **Neutral**: #F5F7FA (light gray background)
 - **Success**: #1FAD66
+- **Typography**: Inter, Segoe UI, Helvetica, Arial, sans-serif
 
 ## Contact Information
 - **Email**: mike.ochs@stellat.us
 - **Company**: Stellatus LLC
 - **Website**: stellat.us
 
-## PDF Generation
+## PDF Generation Rules
 - NGM one-pager must be exactly 1 page
 - Website two-pager must be exactly 2 pages
 - Always include company header with logo on all pages
-- CTAs should be clickable hyperlinks
+- CTAs should be clickable hyperlinks with mailto: or https:// URLs
+- Use absolute paths for logos in HTML that will be converted to PDF
 
-## Deployment
-- Git push to origin/master
-- Deploy with `vercel --prod`
-- Live site: https://stellat.us
+## TSF Page Special Notes
+- **IMPORTANT**: Use absolute paths for all assets (`/tsf/assets/...`)
+- Icon paths should reference root (`../stellatus-logo.ico`)
+- Hero section needs dark overlay for text contrast
+- SVG text should use Inter font-family and proper font-weight
+
+## Deployment Process
+1. Make changes locally
+2. Test PDF generation with `npm run pdfs`
+3. Commit with descriptive message
+4. `git push origin master`
+5. Deploy with `vercel --prod`
+6. Verify at https://stellat.us
 
 ## Image Generation
 - **ALWAYS use Replicate MCP with Bytedance's seedream-4 model** for image creation
@@ -42,3 +146,16 @@
 - Model: `bytedance/seedream-4`
 - Focus on photorealistic, professional enterprise aesthetics
 - Avoid text overlays in generated images
+
+## Decision-Support Positioning
+- We provide **decision-support only** - not operational control
+- EOR retains sign-off authority
+- Contracts cap liability exposure
+- Read-only data collectors only
+- No control system access
+
+## Data Ownership
+- Customer owns all raw & processed site data
+- We retain platform IP with license to outputs
+- Optional: de-identified derived features to improve models
+- Provenance chain: Source → QC → Transform → Figure
