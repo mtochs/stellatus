@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOR Draft in 48 Hours - Nevada Gold Mines</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: 9pt;
+            line-height: 1.3;
+            color: #0F1115;
+            background: white;
+        }
+        
+        .page {
+            width: 100%;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+        
+        .header-content h1 {
+            font-size: 22pt;
+            color: white;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        .header-content .tagline {
+            color: #E5B202;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        .badge {
+            background: #E5B202;
+            color: #0F1115;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 20pt;
+            font-weight: 700;
+        }
+        
+        /* Key Points Bar */
+        .key-points {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .key-point {
+            flex: 1;
+            background: #F5F7FA;
+            padding: 8px;
+            border-left: 3px solid #E5B202;
+            border-radius: 4px;
+        }
+        
+        .key-point h3 {
+            font-size: 8.5pt;
+            color: #0F1115;
+            margin-bottom: 1px;
+            font-weight: 600;
+        }
+        
+        .key-point p {
+            font-size: 7.5pt;
+            color: #666;
+        }
+        
+        /* Main Content */
+        .section {
+            margin-bottom: 10px;
+        }
+        
+        .section h2 {
+            font-size: 11pt;
+            color: #0F1115;
+            margin-bottom: 6px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #E5B202;
+            font-weight: 600;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .section li {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+            font-size: 8.5pt;
+        }
+        
+        .section li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #E5B202;
+            font-weight: bold;
+        }
+        
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            margin: 8px 0;
+            padding: 8px;
+            background: #F5F7FA;
+            border-radius: 4px;
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #E5B202;
+            color: #0F1115;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 24px;
+            margin-bottom: 3px;
+            font-size: 10pt;
+        }
+        
+        .step h4 {
+            font-size: 8pt;
+            margin-bottom: 2px;
+        }
+        
+        .step p {
+            font-size: 7pt;
+            color: #666;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .card {
+            background: #F5F7FA;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .card h3 {
+            font-size: 9pt;
+            margin-bottom: 4px;
+            color: #0F1115;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            font-size: 7.5pt;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+        
+        .card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #E5B202;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            font-size: 10pt;
+            margin-bottom: 6px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E5B202;
+            color: #0F1115;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 10px;
+            padding-top: 6px;
+            border-top: 1px solid #ddd;
+            font-size: 7pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #0F1115;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>EOR Draft in 48 Hours</h1>
+                <div class="tagline">Your TSF monthly report, ready in 48 hours from existing data</div>
+            </div>
+            <div class="badge">≤48h</div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <h3>Zero CapEx</h3>
+                <p>Software-first solution</p>
+            </div>
+            <div class="key-point">
+                <h3>Full Provenance</h3>
+                <p>Click-through audit trail</p>
+            </div>
+            <div class="key-point">
+                <h3>Your Template</h3>
+                <p>EOR-ready format</p>
+            </div>
+        </div>
+        
+        <!-- The NGM Challenge -->
+        <section class="section">
+            <h2>The NGM Challenge</h2>
+            <ul>
+                <li><strong>7 shifts/month</strong> across Carlin facilities for TSF reporting</li>
+                <li><strong>Contractor backlog</strong> creates critical path delays</li>
+                <li><strong>8–20 days</strong> from data capture to draft delivery</li>
+            </ul>
+        </section>
+        
+        <!-- Our Solution -->
+        <section class="section">
+            <h2>Our Solution: Three Steps to Your Monthly Draft</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Ingest & QC</h4>
+                    <p>Auto-align units, flag gaps</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Change Cards</h4>
+                    <p>Surface movements, TARPs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Generate Draft</h4>
+                    <p>Word/PDF in your template</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Two Column: Shadow Draft & Pilot -->
+        <div class="two-column">
+            <div class="card">
+                <h3>Shadow Draft Process</h3>
+                <ul>
+                    <li>Send last month's data bundle</li>
+                    <li>Include: piezos, GNSS, drone, bathy</li>
+                    <li>Provide your report template</li>
+                    <li><strong>Receive draft in 7 days</strong></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>30-Day Pilot Gates</h3>
+                <ul>
+                    <li>Two ≤48h drafts delivered</li>
+                    <li>≥2 live feeds integrated</li>
+                    <li>≤10 EOR edits to finalize</li>
+                    <li>≥1 novel actionable finding</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- What NGM Gets -->
+        <section class="section">
+            <h2>What NGM Gets</h2>
+            <ul>
+                <li><strong>≤48h turnaround</strong> after survey drop — draft with figures, tables, captions</li>
+                <li><strong>Click-through provenance</strong> — see Source → QC → Transform → Figure for every data point</li>
+                <li><strong>Your EOR's template</strong> — familiar format, accelerated delivery</li>
+                <li><strong>Removes contractor bottleneck</strong> from critical path</li>
+            </ul>
+        </section>
+        
+        <!-- Deployment & Security -->
+        <section class="section">
+            <h2>Deployment & Security</h2>
+            <ul>
+                <li><strong>Your tenant</strong> or ring-fenced enclave — full control</li>
+                <li><strong>Read-only collectors</strong> — no control system access</li>
+                <li><strong>Decision-support only</strong> — maintains liability boundaries</li>
+            </ul>
+        </section>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3>Ready to transform your TSF reporting?</h3>
+            <div class="cta-button">Share sample under MNDA → Shadow Draft in 7 days</div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Illustrative pilot results: 8–20 days → ≤48h cycle time; 40–70% reduction in internal hours. Methods available on request.
+            <br>© 2025 Stellatus LLC • stellat.us • mike.ochs@stellat.us
+        </div>
+    </div>
+</body>
+</html>

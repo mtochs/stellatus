@@ -150,8 +150,8 @@
 
         // Trigger download immediately
         const link = document.createElement('a');
-        link.href = 'Stellatus-TSF-Monitoring-Overview.pdf';
-        link.download = 'Stellatus-TSF-Monitoring-Overview.pdf';
+        link.href = 'collateral/Stellatus-EOR-Draft-in-48-Overview.pdf';
+        link.download = 'Stellatus-EOR-Draft-in-48-Overview.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

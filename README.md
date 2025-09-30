@@ -26,8 +26,22 @@ stellatus/
 ├── script.js                  # Main JavaScript
 ├── download-modal.js          # PDF download modal functionality
 ├── download-modal.css         # Modal styling
-├── tsf-onepager.html         # One-pager HTML version
-├── Stellatus-TSF-Monitoring-Overview.pdf  # Marketing PDF
+├── tsf-onepager.html         # One-pager HTML version (legacy)
+├── Stellatus-TSF-Monitoring-Overview.pdf  # Original marketing PDF (legacy)
+├── collateral/                # Marketing collateral system
+│   ├── README.md              # Collateral documentation
+│   ├── Stellatus-EOR-Draft-in-48-Overview.pdf  # New 2-page public download
+│   ├── ngm/                   # NGM-specific one-pager
+│   │   ├── ngm-one-pager.html
+│   │   ├── ngm-one-pager_letter.pdf (1 page)
+│   │   └── ngm-one-pager_a4.pdf (1 page)
+│   ├── 2pg/                   # Generic website two-pager
+│   │   ├── website-two-pager.html
+│   │   ├── website-two-pager_letter.pdf (2 pages)
+│   │   └── website-two-pager_a4.pdf (2 pages)
+│   └── assets/                # Icons and styles
+├── scripts/
+│   └── generate-pdfs.mjs     # Automated PDF generation
 ├── api/
 │   └── submit-download.js    # Serverless function for email notifications
 ├── images/                    # Image assets
@@ -45,8 +59,17 @@ stellatus/
 - Modal popup triggered from "Download 1-pager" button
 - Captures: Name, Email, Company (optional)
 - Sends notification email to mike.ochs@stellat.us via Resend API
-- Automatically downloads PDF after submission
+- Automatically downloads new 2-page PDF after submission
 - Mobile-responsive design
+
+### Marketing Collateral System
+- Automated PDF generation using Puppeteer
+- NGM-specific one-pager (1 page)
+- Generic website two-pager (2 pages)
+- Both Letter and A4 sizes
+- No metadata headers/footers (clean, professional)
+- Automatic page count validation
+- Run `npm run pdfs` to regenerate all collateral
 
 ### Hero Video Background
 - Compressed MP4 and WebM formats for optimal performance
@@ -88,6 +111,12 @@ cd stellatus
 ```bash
 npm install
 ```
+
+3. Generate marketing PDFs (optional):
+```bash
+npm run pdfs
+```
+This generates all collateral PDFs in the `/collateral` folder.
 
 3. Set up environment variables:
    - Create `.env` file (see `.env.example`)
@@ -260,11 +289,45 @@ To add Google Analytics:
 
 ## ✨ Recent Updates
 
+- ✅ New automated PDF generation system (Puppeteer-based)
+- ✅ NGM-specific one-pager (1 page, Letter & A4)
+- ✅ Website two-pager (2 pages, Letter & A4)
+- ✅ Clean PDFs with no metadata headers/footers
+- ✅ Automatic page count validation
 - ✅ Compressed hero video (87% size reduction)
 - ✅ Added WebM format for better browser support
 - ✅ Fixed Resend API integration
-- ✅ Cleaned up unused documentation files
-- ✅ Updated README with current information
+
+## 📄 Marketing Collateral
+
+The `/collateral` folder contains all marketing PDFs with an automated generation system:
+
+### Quick Commands
+```bash
+# Regenerate all PDFs
+npm run pdfs
+
+# View detailed documentation
+cat collateral/README.md
+```
+
+### What's Included
+- **NGM One-Pager**: Fits on exactly 1 page (Letter & A4)
+- **Website Two-Pager**: Fits on exactly 2 pages (Letter & A4)
+- **Automated Validation**: Script verifies page counts and fails if incorrect
+- **No Metadata**: Clean, professional PDFs without print headers/footers
+
+### Editing Content
+1. Update HTML files in `collateral/ngm/` or `collateral/2pg/`
+2. Modify CSS in `collateral/assets/styles/`
+3. Run `npm run pdfs` to regenerate
+4. Script automatically validates page counts
+
+See `collateral/README.md` for full documentation on:
+- Brand guidelines
+- Content guidelines
+- Editing workflows
+- Troubleshooting
 
 ---
 

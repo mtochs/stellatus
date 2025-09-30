@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOR Draft in 48 Hours - Stellatus</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: 8.5pt;
+            line-height: 1.25;
+            color: #0F1115;
+            background: white;
+        }
+        
+        .page {
+            width: 100%;
+            max-width: 8.5in;
+            margin: 0 auto;
+            page-break-after: always;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .header-content h1 {
+            font-size: 20pt;
+            color: white;
+            margin-bottom: 1px;
+            font-weight: 700;
+        }
+        
+        .header-content .tagline {
+            color: #fff;
+            font-size: 9pt;
+            margin-bottom: 1px;
+        }
+        
+        .header-content .subtitle {
+            color: #E5B202;
+            font-size: 8pt;
+            font-weight: 500;
+        }
+        
+        .badge {
+            background: #E5B202;
+            color: #0F1115;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 20pt;
+            font-weight: 700;
+        }
+        
+        /* Key Points Bar */
+        .key-points {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .key-point {
+            flex: 1;
+            background: #F5F7FA;
+            padding: 6px;
+            border-left: 2px solid #E5B202;
+            border-radius: 3px;
+            text-align: center;
+        }
+        
+        .key-point h3 {
+            font-size: 8pt;
+            color: #0F1115;
+            margin-bottom: 1px;
+            font-weight: 600;
+        }
+        
+        .key-point p {
+            font-size: 6.5pt;
+            color: #666;
+        }
+        
+        /* Section Headers */
+        h2 {
+            font-size: 10pt;
+            color: #0F1115;
+            margin-bottom: 5px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #E5B202;
+            font-weight: 600;
+        }
+        
+        /* Process Steps */
+        .process-section {
+            background: #F5F7FA;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        
+        .step {
+            text-align: center;
+            flex: 1;
+            background: white;
+            padding: 6px;
+            border-radius: 3px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #E5B202;
+            color: #0F1115;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 24px;
+            margin-bottom: 3px;
+            font-size: 10pt;
+        }
+        
+        .step h4 {
+            font-size: 8pt;
+            margin-bottom: 1px;
+            font-weight: 600;
+        }
+        
+        .step p {
+            font-size: 7pt;
+            color: #666;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .card {
+            background: #F5F7FA;
+            padding: 8px;
+            border-radius: 3px;
+        }
+        
+        .card h3 {
+            font-size: 9pt;
+            margin-bottom: 4px;
+            color: #0F1115;
+            font-weight: 600;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            font-size: 7.5pt;
+            padding-left: 10px;
+            position: relative;
+            margin-bottom: 2px;
+        }
+        
+        .card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #E5B202;
+            font-weight: bold;
+        }
+        
+        /* ROI Metrics */
+        .roi-section {
+            background: linear-gradient(135deg, #F5F7FA 0%, white 100%);
+            border: 1.5px solid #E5B202;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .roi-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            text-align: center;
+            margin-top: 6px;
+        }
+        
+        .metric {
+            background: white;
+            padding: 6px;
+            border-radius: 3px;
+        }
+        
+        .metric-value {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #E5B202;
+            margin-bottom: 1px;
+        }
+        
+        .metric-label {
+            font-size: 7pt;
+            color: #666;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 9pt;
+        }
+        
+        thead {
+            background: #0F1115;
+            color: white;
+        }
+        
+        th {
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 7px 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #F5F7FA;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 16px;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            font-size: 12pt;
+            margin-bottom: 12px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #E5B202;
+            color: #0F1115;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 10pt;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #E5B202;
+            color: #E5B202;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+            font-size: 8pt;
+            color: #666;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        /* Page break control */
+        .force-break {
+            page-break-before: always;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1 -->
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>EOR Draft in 48 Hours</h1>
+                <div class="tagline">Transform weeks of manual reporting into 2 days of automated precision</div>
+                <div class="subtitle">No New CapEx • Full Provenance • Software-First</div>
+            </div>
+            <div class="badge">≤48h</div>
+        </div>
+        
+        <!-- Key Points -->
+        <div class="key-points">
+            <div class="key-point">
+                <h3>≤48h Turnaround</h3>
+                <p>Survey drop to complete draft</p>
+            </div>
+            <div class="key-point">
+                <h3>Auditable Trail</h3>
+                <p>Click any figure for provenance</p>
+            </div>
+            <div class="key-point">
+                <h3>Your Data, Secure</h3>
+                <p>Your tenant, read-only access</p>
+            </div>
+        </div>
+        
+        <!-- Three Steps Process -->
+        <div class="process-section">
+            <h2>Three Clicks to Your Monthly Draft</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Ingest & QC</h4>
+                    <p>Auto-align units, timebases<br>Flag gaps & drift</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Change Cards</h4>
+                    <p>Surface movement, pressure<br>Volume deltas + TARPs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Generate Draft</h4>
+                    <p>Word/PDF in your template<br>Figures, CSV, provenance</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 30-Day Pilot & ROI -->
+        <div class="two-column">
+            <div class="card">
+                <h3>30-Day Pilot Program</h3>
+                <ul>
+                    <li><strong>Week 0:</strong> Shadow Draft in 7 days</li>
+                    <li><strong>Days 8-30:</strong> Two live Draft-in-48</li>
+                    <li><strong>Success gates:</strong></li>
+                    <li>✓ Two ≤48h drafts delivered</li>
+                    <li>✓ ≥2 data feeds integrated</li>
+                    <li>✓ ≤10 EOR edits to finalize</li>
+                    <li>✓ ≥1 novel actionable finding</li>
+                    <li><strong>Pass:</strong> Fee credits to Year 1</li>
+                    <li><strong>Miss twice:</strong> Full refund</li>
+                </ul>
+            </div>
+            <div class="roi-section" style="flex: 1;">
+                <h3 style="margin-bottom: 8px;">Quantified ROI</h3>
+                <div class="roi-metrics">
+                    <div class="metric">
+                        <div class="metric-value">10×</div>
+                        <div class="metric-label">Faster Delivery</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">40-70%</div>
+                        <div class="metric-label">Labor Reduction</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">$0</div>
+                        <div class="metric-label">CapEx Required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- What We Ingest -->
+        <section style="margin-bottom: 16px;">
+            <h2>What We Ingest (No Reformatting Required)</h2>
+            <div style="background: #F5F7FA; padding: 12px; border-radius: 4px;">
+                <p style="font-size: 9.5pt;">
+                    • Piezometer time series (VWP, standpipe) • GNSS/RTK monuments 
+                    • Drone orthos, DSM, point clouds • Bathymetry survey points 
+                    • Optional: InSAR, weather, seepage flow rates
+                </p>
+            </div>
+        </section>
+        
+        <!-- Comparison Table -->
+        <h2>Comparison Snapshot</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Traditional</th>
+                    <th>With Stellatus</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Draft Time</td>
+                    <td>8–20 days</td>
+                    <td><strong>≤48 hours</strong></td>
+                    <td>10× faster</td>
+                </tr>
+                <tr>
+                    <td>Manual Work</td>
+                    <td>40–80 hrs/month</td>
+                    <td><strong>40–70% reduction</strong></td>
+                    <td>Focus on decisions</td>
+                </tr>
+                <tr>
+                    <td>Contractor Reliance</td>
+                    <td>Critical blocker</td>
+                    <td><strong>Off critical path</strong></td>
+                    <td>Predictable delivery</td>
+                </tr>
+                <tr>
+                    <td>Anomaly Detection</td>
+                    <td>Visual inspection</td>
+                    <td><strong>Automated cards</strong></td>
+                    <td>Fewer misses</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- PAGE 2 -->
+    <div class="page force-break">
+        <!-- Why We're Different -->
+        <section style="margin-bottom: 16px;">
+            <h2>Why We're Different</h2>
+            <div class="two-column">
+                <div class="card">
+                    <h3>Technical Excellence</h3>
+                    <ul>
+                        <li>EOR-ready output in their template</li>
+                        <li>Provenance chain for every number</li>
+                        <li>Vendor-neutral sensor compatibility</li>
+                        <li>Platform learns from your edits</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Security & Control</h3>
+                    <ul>
+                        <li>Read-only collectors (no control risk)</li>
+                        <li>Your cloud tenant or ring-fenced enclave</li>
+                        <li>Decision-support only positioning</li>
+                        <li>SOC 2 program in progress</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Deployment Options -->
+        <section style="margin-bottom: 16px;">
+            <h2>Deployment Options</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                <div style="background: #F5F7FA; padding: 10px; border-radius: 4px; text-align: center;">
+                    <strong style="font-size: 10pt;">Your Cloud</strong><br>
+                    <span style="font-size: 8pt; color: #666;">Full control, your IAM</span>
+                </div>
+                <div style="background: #F5F7FA; padding: 10px; border-radius: 4px; text-align: center;">
+                    <strong style="font-size: 10pt;">Ring-Fenced</strong><br>
+                    <span style="font-size: 8pt; color: #666;">Isolated enclave</span>
+                </div>
+                <div style="background: #F5F7FA; padding: 10px; border-radius: 4px; text-align: center;">
+                    <strong style="font-size: 10pt;">Hybrid</strong><br>
+                    <span style="font-size: 8pt; color: #666;">Edge + cloud</span>
+                </div>
+                <div style="background: #F5F7FA; padding: 10px; border-radius: 4px; text-align: center;">
+                    <strong style="font-size: 10pt;">Air-Gapped</strong><br>
+                    <span style="font-size: 8pt; color: #666;">On-premise (Q3)</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Addressing Common Concerns -->
+        <section style="margin-bottom: 16px;">
+            <h2>Addressing Common Concerns</h2>
+            <div style="background: #F5F7FA; padding: 14px; border-radius: 6px;">
+                <div style="margin-bottom: 10px;">
+                    <strong style="font-size: 10pt;">"Our EOR won't trust third-party analytics"</strong><br>
+                    <span style="font-size: 9pt;">This is their draft in their template—we just accelerate it with full provenance.</span>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong style="font-size: 10pt;">"We already have monitoring software"</strong><br>
+                    <span style="font-size: 9pt;">Great—we integrate with it. Our value is the 48h draft across all data streams.</span>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong style="font-size: 10pt;">"What about liability?"</strong><br>
+                    <span style="font-size: 9pt;">Decision-support only. Contracts cap exposure. You maintain control.</span>
+                </div>
+                <div>
+                    <strong style="font-size: 10pt;">"How do you handle bad data?"</strong><br>
+                    <span style="font-size: 9pt;">Auto-QC flags gaps, drift, outliers. You review and approve all outputs.</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Critical Incidents Box -->
+        <section style="margin-bottom: 16px;">
+            <h2>Why Speed Matters: Critical Incidents</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                <div style="background: #fff; border: 2px solid #E5B202; padding: 10px; border-radius: 4px;">
+                    <strong style="color: #E5B202;">Brumadinho 2019</strong><br>
+                    <span style="font-size: 8.5pt;">Weeks of precursory deformation—detected too late</span>
+                </div>
+                <div style="background: #fff; border: 2px solid #E5B202; padding: 10px; border-radius: 4px;">
+                    <strong style="color: #E5B202;">Cadia 2018</strong><br>
+                    <span style="font-size: 8.5pt;">Months of acceleration before failure—monitoring gap</span>
+                </div>
+                <div style="background: #0F1115; color: white; padding: 10px; border-radius: 4px;">
+                    <strong>Your TSF</strong><br>
+                    <span style="font-size: 8.5pt;">Don't wait 3+ weeks for insights that matter today</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA -->
+        <div class="cta-section">
+            <h3>Ready to compress months into hours?</h3>
+            <div class="cta-buttons">
+                <div class="cta-button">Request Shadow Draft</div>
+                <div class="cta-button secondary">Schedule Technical Call</div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <strong>Stellatus:</strong> Where mining data becomes actionable intelligence.<br>
+            stellat.us • mike.ochs@stellat.us • © 2025 Stellatus LLC • Decision-support only
+        </div>
+    </div>
+</body>
+</html>
