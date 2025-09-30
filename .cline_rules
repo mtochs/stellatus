@@ -35,3 +35,10 @@
 - Git push to origin/master
 - Deploy with `vercel --prod`
 - Live site: https://stellat.us
+
+## Image Generation
+- **ALWAYS use Replicate MCP with Bytedance's seedream-4 model** for image creation
+- Use tool: `use_mcp_tool` with server_name: `replicate`
+- Model: `bytedance/seedream-4`
+- Focus on photorealistic, professional enterprise aesthetics
+- Avoid text overlays in generated images
