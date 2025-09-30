@@ -1,0 +1,37 @@
+# Stellatus Project Rules and Important Information
+
+## Logo Usage
+- **ALWAYS use the official logo**: `/images/stellatus-logo-star-circuit.png`
+- Never create CSS shapes or placeholders for the logo
+- The logo should be used in all collateral, PDFs, and marketing materials
+
+## Project Structure
+- **Collateral folder**: `/collateral/` contains all marketing materials
+- **PDF Generation**: Use `npm run pdfs` to generate all PDFs
+- **Website**: https://stellat.us
+
+## Important Files to Update
+- **README.md**: Update after any structural changes to the project
+- **collateral/README.md**: Update after changes to collateral structure or generation process
+
+## Brand Guidelines
+- **Primary Color**: #0F1115 (near-black)
+- **Accent Color**: #E5B202 (gold)
+- **Neutral**: #F5F7FA (light gray background)
+- **Success**: #1FAD66
+
+## Contact Information
+- **Email**: mike.ochs@stellat.us
+- **Company**: Stellatus LLC
+- **Website**: stellat.us
+
+## PDF Generation
+- NGM one-pager must be exactly 1 page
+- Website two-pager must be exactly 2 pages
+- Always include company header with logo on all pages
+- CTAs should be clickable hyperlinks
+
+## Deployment
+- Git push to origin/master
+- Deploy with `vercel --prod`
+- Live site: https://stellat.us
