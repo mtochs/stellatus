@@ -41,9 +41,11 @@ h2 { font-family: 'Exo 2', sans-serif; text-shadow: 0 0 12px rgba(212,175,55,0.4
 
 .value-points { display: grid; gap: 8px; margin: 12px 0 0; padding-left: 16px; }
 .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; margin-top: 18px; }
-.demo-card { background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 12px; }
-.demo-card img { border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); width: 100%; height: auto; }
-.demo-card figcaption { margin-top: 10px; font-size: 14px; line-height: 1.4; }
+.demo-card { background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; }
+.demo-card img { border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); width: 100%; height: 220px; object-fit: cover; }
+.demo-card figcaption { margin-top: 10px; font-size: 14px; line-height: 1.4; display: flex; flex-direction: column; gap: 4px; }
+.demo-card figcaption strong { font-size: 16px; color: #E5B202; display: block; }
+.demo-card figcaption span { display: block; color: #CFCFE2; }
 .prov { margin-top: 16px; display: grid; place-items: center; }
 .prov-chain text { font-family: Inter, sans-serif; }
 
