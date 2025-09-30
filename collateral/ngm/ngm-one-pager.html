@@ -249,10 +249,63 @@
                 -webkit-print-color-adjust: exact;
             }
         }
+        /* Company Header */
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #E5B202;
+        }
+        
+        .company-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-star {
+            width: 30px;
+            height: 30px;
+            background: #E5B202;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .company-name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #0F1115;
+        }
+        
+        .company-website {
+            font-size: 10pt;
+            color: #0F1115;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="page">
+        <!-- Company Header -->
+        <div class="company-header">
+            <div class="company-logo">
+                <div class="logo-star"></div>
+                <div class="company-name">STELLATUS LLC</div>
+            </div>
+            <a href="https://stellat.us" class="company-website">stellat.us</a>
+        </div>
+        
         <!-- Header -->
         <div class="header">
             <div class="header-content">
@@ -356,7 +409,7 @@
         <!-- CTA -->
         <div class="cta-section">
             <h3>Ready to transform your TSF reporting?</h3>
-            <div class="cta-button">Share sample under MNDA → Shadow Draft in 7 days</div>
+            <a href="mailto:mike.ochs@stellat.us?subject=Request%20Shadow%20Draft%20-%20NGM" class="cta-button">Share sample under MNDA → Shadow Draft in 7 days</a>
         </div>
         
         <!-- Footer -->
