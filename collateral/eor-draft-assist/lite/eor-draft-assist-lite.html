@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOR Draft-Assist Lite — Stellatus</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in 0.6in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #0F1115;
+            background: white;
+        }
+        
+        /* Company Header */
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .company-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        .company-name {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #0F1115;
+        }
+        
+        .company-website {
+            font-size: 14pt;
+            color: #0F1115;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        h1 {
+            font-size: 18pt;
+            color: #0F1115;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 11pt;
+            color: #0F1115;
+            margin: 10px 0 4px 0;
+            font-weight: 600;
+        }
+        
+        .tagline {
+            font-size: 10pt;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .section {
+            margin-bottom: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 6px;
+        }
+        
+        ul {
+            margin: 4px 0;
+            padding-left: 18px;
+        }
+        
+        li {
+            margin-bottom: 3px;
+            line-height: 1.35;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #ddd;
+            font-size: 8pt;
+            color: #666;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Company Header -->
+    <div class="company-header">
+        <div class="company-logo">
+            <img src="../../../images/stellatus-logo-star-circuit.png" alt="Stellatus Logo" class="logo-img">
+            <div class="company-name">STELLATUS LLC</div>
+        </div>
+        <a href="https://stellat.us" class="company-website">stellat.us</a>
+    </div>
+    
+    <h1><strong>EOR Draft-Assist</strong> — You sign; we accelerate.</h1>
+    <div class="tagline">
+        <strong>Your monthly TSF draft in ≤48 hours</strong> — timer starts at <strong>final survey drop + complete bundle</strong>.
+        Output is <strong>your Word template</strong> with <strong>Track Changes</strong> and a <strong>Provenance PDF</strong> (click any figure to see Source → QC → Transform → Figure).
+    </div>
+    
+    <div class="section">
+        <h2>Why EORs use this</h2>
+        <ul>
+            <li>Offload <strong>assembly/formatting</strong> → focus on review & judgement</li>
+            <li><strong>Predictable cadence:</strong> two ≤48h cycles in a 30-day pilot (money-back gate)</li>
+            <li><strong>Defensibility:</strong> chain-of-custody (time-stamped inputs, bundle hash, immutable clock log)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>What we need (one email)</h2>
+        <p>Template DOCX + figure list · TARPs + <strong>CRS/vertical/epoch</strong> · last month's piezos/GNSS/drone/bathy · data owners (time-series & survey)</p>
+    </div>
+    
+    <div class="section">
+        <h2>Try it (no risk)</h2>
+        <ul>
+            <li><strong>Shadow Draft in 7 days</strong> from last month's bundle (under MNDA)</li>
+            <li><strong>30-day pilot — pass/fail:</strong> two ≤48h drafts; ≥2 feeds; ≤10 edits; ≥1 novel finding <strong>or</strong> quiet month (0 false positives)</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>EOR independence & access</h2>
+        <p><strong>Free</strong> named EOR seats (pilot + subscription). <strong>No referral payments to individuals</strong>; any credits apply to the <strong>operator</strong>.</p>
+    </div>
+    
+    <div class="cta">
+        <strong>CTA:</strong> Reply with "MNDA + sample" and we'll book a 60-min working session.
+    </div>
+    
+    <div class="footer">
+        Decision-support only; you retain sign-off. © 2025 Stellatus LLC • stellat.us • mike.ochs@stellat.us
+    </div>
+</body>
+</html>

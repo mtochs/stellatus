@@ -35,6 +35,14 @@ const jobs = [
       { size: "A4",     out: "collateral/eor-draft-assist/eor-draft-assist_a4.pdf" }
     ],
     expectedPages: 1
+  },
+  {
+    html: "collateral/eor-draft-assist/lite/eor-draft-assist-lite.html",
+    outputs: [
+      { size: "Letter", out: "collateral/eor-draft-assist/lite/eor-draft-assist-lite_letter.pdf" },
+      { size: "A4",     out: "collateral/eor-draft-assist/lite/eor-draft-assist-lite_a4.pdf" }
+    ],
+    expectedPages: 1
   }
 ];
 // -----------------------------------
