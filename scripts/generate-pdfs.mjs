@@ -27,6 +27,14 @@ const jobs = [
     // extra copy/rename after Letter is produced:
     copyFrom: "collateral/2pg/website-two-pager_letter.pdf",
     copyTo:   "collateral/Stellatus-EOR-Draft-in-48-Overview.pdf"
+  },
+  {
+    html: "collateral/eor-draft-assist/eor-draft-assist.html",
+    outputs: [
+      { size: "Letter", out: "collateral/eor-draft-assist/eor-draft-assist_letter.pdf" },
+      { size: "A4",     out: "collateral/eor-draft-assist/eor-draft-assist_a4.pdf" }
+    ],
+    expectedPages: 1
   }
 ];
 // -----------------------------------

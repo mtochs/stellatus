@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOR Draft-Assist — You sign; we accelerate — Stellatus</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.25in 0.6in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: 10pt;
+            line-height: 1.35;
+            color: #0F1115;
+            background: white;
+        }
+        
+        /* Company Header */
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        .company-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+        
+        .company-name {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #0F1115;
+        }
+        
+        .company-website {
+            font-size: 16pt;
+            color: #0F1115;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Hero Header */
+        .hero-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 10px 14px;
+            border-radius: 5px;
+            margin-bottom: 6px;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 12px;
+        }
+        
+        .hero-content h1 {
+            font-size: 20pt;
+            color: white;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+        
+        .hero-content .tagline {
+            color: #fff;
+            font-size: 9.5pt;
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+        
+        .hero-content .kpis {
+            color: #D4AF37;
+            font-size: 8.5pt;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        
+        .hero-badge {
+            background: #D4AF37;
+            color: #0F1115;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-size: 20pt;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        
+        /* Section Headers */
+        h2 {
+            font-size: 11pt;
+            color: #0F1115;
+            margin: 6px 0 3px 0;
+            padding-bottom: 2px;
+            border-bottom: 2px solid #D4AF37;
+            font-weight: 600;
+        }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+        
+        .card {
+            background: #F5F7FA;
+            padding: 6px;
+            border-radius: 4px;
+        }
+        
+        .card h3 {
+            font-size: 9.5pt;
+            margin-bottom: 3px;
+            color: #0F1115;
+            font-weight: 600;
+        }
+        
+        .card ul, .card ol {
+            list-style: none;
+            padding-left: 0;
+            margin: 3px 0;
+        }
+        
+        .card li {
+            font-size: 8.75pt;
+            padding-left: 11px;
+            position: relative;
+            margin-bottom: 1.5px;
+            line-height: 1.25;
+        }
+        
+        .card ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .card ol {
+            counter-reset: item;
+        }
+        
+        .card ol li {
+            counter-increment: item;
+        }
+        
+        .card ol li:before {
+            content: counter(item) ") ";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff 0%, #F5F7FA 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 5px;
+            padding: 6px 8px;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box h3 {
+            font-size: 13.25pt;
+            margin-bottom: 3px;
+            color: #0F1115;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 2px 0;
+        }
+        
+        .highlight-box li {
+            font-size: 11.5pt;
+            padding-left: 11px;
+            position: relative;
+            margin-bottom: 1.5px;
+            line-height: 1.3;
+        }
+        
+        .highlight-box li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .guarantee-badge {
+            background: #D4AF37;
+            color: #0F1115;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 11pt;
+            font-weight: 700;
+            margin: 4px auto 0;
+            display: block;
+            text-align: center;
+            width: fit-content;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0F1115 0%, #1a1d24 100%);
+            padding: 8px 14px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 6px;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            font-size: 10.5pt;
+            margin-bottom: 6px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #D4AF37;
+            color: #0F1115;
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 8.5pt;
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 6px;
+            padding-top: 4px;
+            border-top: 1px solid #ddd;
+            font-size: 7.5pt;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Company Header -->
+    <div class="company-header">
+        <div class="company-logo">
+            <img src="../../images/stellatus-logo-star-circuit.png" alt="Stellatus Logo" class="logo-img">
+            <div class="company-name">STELLATUS LLC</div>
+        </div>
+        <a href="https://stellat.us" class="company-website">stellat.us</a>
+    </div>
+    
+    <!-- Hero Header -->
+    <div class="hero-header">
+        <div class="hero-content">
+            <h1>EOR Draft-Assist — <em>You sign; we accelerate.</em></h1>
+            <div class="tagline"><strong>Your monthly TSF draft in ≤48 hours</strong> — built from the <strong>final survey drop</strong> (and complete bundle), in <strong>your Word template</strong>, with <strong>click-through provenance</strong>.</div>
+            <div class="kpis">≤48h draft turnaround <em>(timer starts at <strong>final survey drop</strong> <strong>and</strong> complete bundle receipt)</em> · Track Changes + low edit count · Provenance PDF for every figure/table</div>
+        </div>
+        <div class="hero-badge">≤48h</div>
+    </div>
+    
+    <!-- Main Content Grid -->
+    <div class="two-col">
+        <div class="card">
+            <h2>EOR non-negotiables (what we optimize for)</h2>
+            <ul>
+                <li><strong>Your template, your numbering.</strong> Word/PDF exactly in your style guide; figures/tables carry <strong>units + CRS/vertical/epoch</strong>.</li>
+                <li><strong>Track Changes by default.</strong> Target <strong>≤10 edits</strong> to finalize per cycle; we learn from your edits.</li>
+                <li><strong>Provenance you can cite.</strong> Every figure/table clicks to <strong>Source → QC → Transform → Figure</strong> (provided as a <strong>Provenance PDF</strong>).</li>
+                <li><strong>Edit proof (pilot):</strong> "Median edits across last 2 cycles: ____." (We track & report this.)</li>
+            </ul>
+            
+            <h2>Three steps (same every month)</h2>
+            <ol>
+                <li><strong>Ingest & QC</strong> — auto-align units/timebases/epoch; flag gaps, drift, outliers; no reformatting.</li>
+                <li><strong>Change Cards</strong> — ranked deltas: surface movement, pore-pressure excursions, pond/volume, GNSS baseline shifts (+ TARPs).</li>
+                <li><strong>Generate Draft</strong> — Word/PDF in your template + figure pack (PNG/SVG), CSV, and <strong>Provenance PDF</strong>.</li>
+            </ol>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Try it fast (no risk)</h3>
+            <p style="font-size: 11.5pt; margin-bottom: 2px; line-height: 1.3;"><strong>Shadow Draft (7 days):</strong> Send last month's bundle + your template under MNDA → we return a draft to review.</p>
+            <p style="font-size: 11.5pt; margin-bottom: 1px; line-height: 1.3;"><strong>30-day pilot (binary gate):</strong></p>
+            <ul>
+                <li><strong>Two ≤48h drafts</strong> (from the <strong>final survey drop</strong> of a complete bundle)</li>
+                <li><strong>≥2 feeds live</strong> (e.g., piezos + GNSS + survey drop)</li>
+                <li><strong>≤10 EOR edits</strong> total to finalize</li>
+                <li><strong>≥1 novel, actionable finding</strong> <strong>OR</strong> "quiet month" with <strong>0 false positives</strong> and ≤10 edits</li>
+            </ul>
+            <p style="font-size: 9.25pt; font-style: italic; margin-top: 2px; text-align: center;">If we miss the gate twice → pilot fee credited/refunded</p>
+        </div>
+    </div>
+    
+    <!-- Bottom Grid -->
+    <div class="two-col">
+        <div class="card">
+            <h2>What we need to start (one email)</h2>
+            <ul>
+                <li><strong>Template & figure list:</strong> your Word template + current figure/table list.</li>
+                <li><strong>Thresholds & references:</strong> TARPs/alert thresholds; <strong>CRS/vertical datum/epoch</strong>.</li>
+                <li><strong>Last month's bundle:</strong> piezos (VWP/standpipe), GNSS/RTK monuments, drone orthos/DSM/point cloud + QA notes, bathymetry points/method.</li>
+                <li><strong>Data owners:</strong> one time-series + one survey contact to resolve quirks.</li>
+            </ul>
+            
+            <h2 style="margin-top: 6px;">EOR independence & access</h2>
+            <ul>
+                <li><strong>Evaluation access for EORs is free</strong> (named EOR seats during pilot + subscription).</li>
+                <li><strong>No referral payments to individuals.</strong> Any credits apply to the <strong>operator</strong>.</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>Chain-of-custody & versioning</h2>
+            <ul>
+                <li><strong>Time-stamped inputs</strong>; <strong>bundle hash</strong> recorded in the Provenance PDF.</li>
+                <li><strong>Immutable clock log:</strong> <strong>final survey drop → draft delivered</strong>.</li>
+                <li><strong>Read-only collectors</strong>; no control-system access.</li>
+            </ul>
+            
+            <h2 style="margin-top: 6px;">Deployment & data</h2>
+            <ul>
+                <li><strong>Default after pilot:</strong> Stellatus-managed <strong>private SaaS</strong> (ring-fenced enclave) for iteration and scale (pilot can run in your tenant; subscription migrates to SaaS unless otherwise contracted).</li>
+                <li><strong>Ownership:</strong> you own raw & processed data.</li>
+                <li><strong>Decision-support only:</strong> you retain sign-off.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="cta-section">
+        <h3>Ready to compress weeks into ≤48 hours?</h3>
+        <div class="cta-buttons">
+            <a href="mailto:mike.ochs@stellat.us?subject=MNDA%20and%20Sample%20Bundle" class="cta-button">Share Sample Under MNDA</a>
+            <a href="mailto:mike.ochs@stellat.us?subject=Book%2060-min%20Working%20Session" class="cta-button secondary">Book 60-min Working Session</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        Decision-support only; you retain sign-off. © 2025 Stellatus LLC • stellat.us • mike.ochs@stellat.us
+    </div>
+</body>
+</html>
